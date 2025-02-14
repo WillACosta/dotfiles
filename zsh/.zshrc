@@ -173,7 +173,7 @@ alias cat=bat
 
 # Git
 alias gc="git commit -m"
-alias ga='git add'
+alias ga='git add .'
 alias gp="git push origin HEAD"
 alias gpush="git pull origin"
 alias gs="git status"
