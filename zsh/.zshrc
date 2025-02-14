@@ -174,8 +174,8 @@ alias cat=bat
 # Git
 alias gc="git commit -m"
 alias ga='git add .'
-alias gp="git push origin HEAD"
-alias gpush="git pull origin"
+alias gp="git pull"
+alias gpush="git push"
 alias gs="git status"
 alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 alias gdiff="git diff"
