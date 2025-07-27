@@ -61,13 +61,13 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 20
-inner.vertical = 20
-outer.left = 20
-outer.bottom = 20
+inner.horizontal = 40
+inner.vertical = 40
+outer.left = 40
+outer.bottom = 40
 # outer.top =        [{ monitor.main = 40}, 40]
-outer.top = 20
-outer.right = 20
+outer.top = 40
+outer.right = 40
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -105,8 +105,10 @@ outer.right = 20
 alt-w = 'exec-and-forget open -a /Applications/Warp.app'
 alt-i = 'exec-and-forget open -a /Applications/iTerm.app'
 alt-o = 'exec-and-forget open -a /Applications/Obsidian.app'
-alt-c = 'exec-and-forget open -a /Applications/VsCode.app'
+alt-v = 'exec-and-forget open -a /Applications/VsCode.app'
 alt-n = 'exec-and-forget open -a /Applications/Notion.app'
+alt-d = 'exec-and-forget open -a /Applications/Docker.app'
+alt-s = 'exec-and-forget open -a /Applications/Spotify.app'
 
 ## Join
 ctrl-alt-shift-left = 'join-with left'
@@ -152,7 +154,7 @@ alt-9 = 'workspace 9'
 # alt-f = 'workspace F'
 # alt-g = 'workspace G'
 # alt-i = 'workspace I'
-# alt-m = 'workspace M'
+alt-m = 'workspace M'
 # alt-n = 'workspace N'
 # alt-o = 'workspace O'
 # alt-p = 'workspace P'
@@ -165,7 +167,7 @@ alt-9 = 'workspace 9'
 # alt-w = 'workspace W'
 # alt-x = 'workspace X'
 # alt-y = 'workspace Y'
-# alt-z = 'workspace Z'
+alt-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -185,7 +187,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 # alt-shift-f = 'move-node-to-workspace F'
 # alt-shift-g = 'move-node-to-workspace G'
 # alt-shift-i = 'move-node-to-workspace I'
-# alt-shift-m = 'move-node-to-workspace M'
+alt-shift-m = 'move-node-to-workspace M'
 # alt-shift-n = 'move-node-to-workspace N'
 # alt-shift-o = 'move-node-to-workspace O'
 # alt-shift-p = 'move-node-to-workspace P'
@@ -198,7 +200,7 @@ alt-shift-9 = 'move-node-to-workspace 9'
 # alt-shift-w = 'move-node-to-workspace W'
 # alt-shift-x = 'move-node-to-workspace X'
 # alt-shift-y = 'move-node-to-workspace Y'
-# alt-shift-z = 'move-node-to-workspace Z'
+alt-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -211,17 +213,61 @@ alt-shift-enter = 'mode apps'
 
 alt-ctrl-shift-f = 'fullscreen'
 
-# custom callbacks
-# command: aerospace list-apps
+# Commands:
+# aerospace list-apps
+# aerospace list-monitors
+
+############ Custom Callbacks
 
 ## Floating windows
 
+## if.app-name-regex-substring = 'substring to search'
+## if.app-id = 'id'
+
 [[on-window-detected]]
-if.app-name-regex-substring = 'finder'
+if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
-# Move to workspace
-# browsers
+[[on-window-detected]]
+if.app-name-regex-substring = 'docker'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.riotgames.RiotGames.RiotClient'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.riotgames.LeagueofLegends.LeagueClientUx'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Photos'
+run = 'layout floating'
+
+
+#### Workspaces
+
+## Browsers Workspace
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace 1'
@@ -230,7 +276,7 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 1'
 
-## dev
+## Development Workspace
 [[on-window-detected]]
 if.app-id = 'dev.warp.Warp-Stable'
 run = 'move-node-to-workspace 2'
@@ -243,7 +289,11 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 2'
 
-## utility
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace 2'
+
+## Productivity Workspace
 [[on-window-detected]]
 if.app-id = 'notion.id'
 run = 'move-node-to-workspace 3'
@@ -262,16 +312,26 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 8'
 
+## Custom Window Sizes
+
+# TODO: There isn't a way to resize windows by app-id yet
+# [[on-window-detected]]
+# if.app-id = 'com.googlecode.iterm2'
+# run = 'resize width 800'
+
 [workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 'main'
-3 = 'main'
-4 = 'main'
-5 = 'main'
-6 = 'main'
-7 = 'main'
-8 = 'secondary'
-9 = 'secondary'
+# main or secondary or Built-in Retina Display or ARZOPA
+1 = 'AW3225QF'
+2 = 'AW3225QF'
+3 = 'AW3225QF'
+4 = 'AW3225QF'
+5 = 'AW3225QF'
+6 = 'AW3225QF'
+7 = 'AW3225QF'
+8 = 'ARZOPA'
+9 = 'ARZOPA'
+Z = 'ARZOPA'
+M = 'Built-in Retina Display'
 
 # Enter service mode => alt-shift-semicolon
 # 'service' binding mode declaration.
@@ -280,8 +340,8 @@ run = 'move-node-to-workspace 8'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = [
-    'layout floating tiling',
-    'mode main',
+  'layout floating tiling',
+  'mode main',
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 

@@ -17,7 +17,9 @@ export PATH=$PATH:~/workspace/Library/sonar-scanner/bin
 
 ## Android & Java Environment
 export JAVA_HOME=~/Library/Java/JavaVirtualMachines/openjdk-18.0.2.1/Contents/Home
+
 export ANDROID_HOME=/Users/will/Library/Android/sdk
+# export ANDROID_SDK_ROOT=~/workspace/Library/Android/SDK
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -27,8 +29,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ## pnpm path
 export PNPM_HOME="/Users/will/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
-export ANDROID_SDK_ROOT=~/workspace/Library/Android/SDK
 
 ### Node
 export PATH=$PATH:/usr/local/opt/node@14/bin
@@ -60,17 +60,17 @@ export NVM_DIR="$HOME/.nvm"
 ZSH_THEME="spaceship"
 
 SPACESHIP_PROMPT_ORDER=(
-  user      # Username section
-  dir       # Current directory section
-  host      # Hostname section
-  git       # Git section (git_branch + git_status)
-  hg        # Mercurial section (hg_branch  + hg_status)
-  exec_time # Execution time
-  line_sep  # Line break
-  vi_mode   # Vi-mode indicator
-  jobs      # Background jobs indicator
-  exit_code # Exit code section
-  char      # Prompt character
+    user      # Username section
+    dir       # Current directory section
+    host      # Hostname section
+    git       # Git section (git_branch + git_status)
+    hg        # Mercurial section (hg_branch  + hg_status)
+    exec_time # Execution time
+    line_sep  # Line break
+    vi_mode   # Vi-mode indicator
+    jobs      # Background jobs indicator
+    exit_code # Exit code section
+    char      # Prompt character
 )
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
@@ -168,21 +168,25 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 test -f ~/.stk/bin/.zshrc && . ~/.stk/bin/.zshrc
 
+alias c="clear"
+
 alias la=tree
 alias cat=bat
 
 # Git
-alias gc="git commit -m"
+alias gcm="git commit -m"
+alias gcam="git commit --amend -m"
 alias ga='git add .'
 alias gp="git pull"
-alias gpush="git push"
-alias gs="git status"
-alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
-alias gdiff="git diff"
-alias gco="git checkout"
+alias gs="git status -s"
+alias gps="git push"
+alias gc="git checkout $1"
 alias gb='git branch'
-alias gba='git branch -a'
-alias gcoall='git checkout -- .'
+alias gst='git stash'
+
+alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias gd="git diff"
+alias gcall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
 
@@ -217,3 +221,21 @@ PATH=/opt/homebrew/bin/python3:$PATH
 
 ## python rye env
 # source "$HOME/.rye/env"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+## Start dev tmux session
+~/workspace/projects/dotfiles/tmux/start_dev.sh
