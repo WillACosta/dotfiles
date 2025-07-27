@@ -61,13 +61,13 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 40
-inner.vertical = 40
-outer.left = 40
-outer.bottom = 40
+inner.horizontal = 15
+inner.vertical = 15
+outer.left = 15
+outer.bottom = 15
 # outer.top =        [{ monitor.main = 40}, 40]
-outer.top = 40
-outer.right = 40
+outer.top = 15
+outer.right = 15
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -328,9 +328,9 @@ run = 'move-node-to-workspace 8'
 5 = 'AW3225QF'
 6 = 'AW3225QF'
 7 = 'AW3225QF'
-8 = 'ARZOPA'
-9 = 'ARZOPA'
-Z = 'ARZOPA'
+8 = 'Arzopa'
+9 = 'Arzopa'
+Z = 'Built-in Retina Display'
 M = 'Built-in Retina Display'
 
 # Enter service mode => alt-shift-semicolon

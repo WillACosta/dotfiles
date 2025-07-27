@@ -1,0 +1,187 @@
+{
+  // Place your snippets for dart here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  // "${TM_DIRECTORY/.*[\\\\\\/](.*)$/$1/}"
+  // ${TM_DIRECTORY/^.+\\/(.*)$/$1/}
+  "service locator": {
+    "prefix": "injget",
+    "body": [
+      "final ${1} = injector.get<${2}>();"
+    ],
+    "description": "Injector instance locator"
+  },
+  "Kiwi DI module": {
+    "prefix": "kiwim",
+    "body": [
+      "//! ${1:module name}",
+      "void _configure${1}Module() {",
+      "  _configure${1}Instances();",
+      "  _configure${1}Factories();",
+      "}",
+      "",
+      "void _configure${1}Instances() {",
+      "  // container.registerInstance();",
+      "}",
+      "",
+      "@Register.factory(${2}, from: ${3})",
+      "void _configure${1}Factories();"
+    ],
+    "description": "Kiwi DI module"
+  },
+  "JsonSerializable": {
+    "prefix": "jsz",
+    "body": [
+      "import 'package:json_annotation/json_annotation.dart';",
+      "part '${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.g.dart';",
+      "",
+      "@JsonSerializable()",
+      "class ${1:ModelName}{",
+      "",
+      "factory ${1:ModelName}.fromJson(Map<String, dynamic> json) => _$${1:ModelName}FromJson(json);",
+      "",
+      "Map<String, dynamic> toJson() => _$${1:ModelName}ToJson(this);",
+      "}"
+    ],
+    "description": "Create a json serializable object"
+  },
+  "Default Test Functions": {
+    "prefix": "dtf",
+    "body": [
+      "import 'package:flutter_test/flutter_test.dart';",
+      "",
+      "void main() {",
+      "",
+      "setUpAll(() {",
+      "/// implement",
+      "});",
+      "",
+      "setUp(() {",
+      "/// implement",
+      "});",
+      "",
+      "group('${1:TestSuitName} Tests', () {",
+      "",
+      "test('should ...', () {",
+      "///",
+      "});",
+      "",
+      "});",
+      "}"
+    ],
+    "description": "Create default test functions and definitions"
+  },
+  "Mock Dependencie with Mocktail": {
+    "prefix": "mkct",
+    "body": [
+      "import 'package:mocktail/mocktail.dart';",
+      "",
+      "class Mock${1:name} extends Mock implements ${1:name} {}",
+      "",
+    ],
+  },
+  "HiveType class extends HiveObject": {
+    "prefix": "hive",
+    "body": [
+      "import 'package:hive/hive.dart';",
+      "",
+      "part '${TM_FILENAME_BASE}.g.dart';",
+      "",
+      "@HiveType()",
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends HiveObject {",
+      "\t@HiveField(0)",
+      "\tString id;",
+      "\t${0:// Hive fields go here}",
+      "}"
+    ],
+    "description": "Creates an HiveType class extending HiveObject structure based on the filename."
+  },
+  "HiveType class": {
+    "prefix": "hivc",
+    "body": [
+      "import 'package:hive/hive.dart';",
+      "",
+      "part '${TM_FILENAME_BASE}.g.dart';",
+      "",
+      "@HiveType()",
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
+      "\t@HiveField(0)",
+      "\tString id;",
+      "\t${0:// Hive fields go here}",
+      "}"
+    ],
+    "description": "Creates an HiveType class structure based on the filename."
+  },
+  "@HiveField(#)": {
+    "prefix": "hf",
+    "body": [
+      "@HiveField(${1})",
+      "${2};",
+      "${0}"
+    ],
+    "description": "Creates @HiveField({number})"
+  },
+  "@HiveType()": {
+    "prefix": "ht",
+    "body": [
+      "@HiveType()",
+      "${0}"
+    ],
+    "description": "Creates @HiveType()"
+  },
+  "@HiveField(#) String": {
+    "prefix": "hfs",
+    "body": [
+      "@HiveField(${1})",
+      "String ${2};",
+      "${0}"
+    ],
+    "description": "Creates @HiveField({number}) String"
+  },
+  "@HiveField(#) int": {
+    "prefix": "hfi",
+    "body": [
+      "@HiveField(${1})",
+      "int ${2};",
+      "${0}"
+    ],
+    "description": "Creates @HiveField({number}) int"
+  },
+  "@HiveField(#) bool": {
+    "prefix": "hfb",
+    "body": [
+      "@HiveField(${1})",
+      "bool ${2};",
+      "${0}"
+    ],
+    "description": "Creates @HiveField({number}) bool"
+  },
+  "@HiveField(#) List": {
+    "prefix": "hfl",
+    "body": [
+      "@HiveField(${1})",
+      "List<${2}> ${3};",
+      "${0}"
+    ],
+    "description": "Creates @HiveField({number}) List<>"
+  },
+  "@HiveField(#) double": {
+    "prefix": "hfd",
+    "body": [
+      "@HiveField(${1})",
+      "double ${2};",
+      "${0}"
+    ],
+    "description": "Creates @HiveField({number}) double"
+  }
+}

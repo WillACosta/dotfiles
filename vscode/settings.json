@@ -1,13 +1,17 @@
 {
   "sync.gist": "85919aaf36b3fed76177eaf8e97860a6",
-  "editor.fontFamily": "JetBrains Mono, Zed Mono",
-  "window.zoomLevel": 1,
+
+  // Editor
+  // "editor.fontFamily": "JetBrains Mono, Zed Mono",
+  // "editor.fontFamily": "Zed Mono",
+  "editor.fontFamily": "JetBrains Mono",
+  "window.zoomLevel": 1.25,
   "editor.fontLigatures": true,
-  "editor.lineHeight": 1.8,
-  "editor.fontSize": 14,
+  "editor.lineHeight": 1.5,
+  "editor.fontSize": 13,
   "editor.tabSize": 2,
-  "editor.renderLineHighlight": "gutter",
-  "editor.cursorStyle": "line",
+  "editor.renderLineHighlight": "all",
+  "editor.cursorStyle": "block",
   "editor.rulers": [100, 120],
   "editor.autoClosingDelete": "always",
   "editor.suggest.preview": true,
@@ -25,7 +29,6 @@
   "editor.accessibilitySupport": "off",
   "editor.scrollbar.vertical": "auto",
   "editor.scrollbar.horizontal": "auto",
-  "workbench.layoutControl.enabled": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.selectionHighlight": false,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -33,11 +36,12 @@
   "editor.tabCompletion": "onlySnippets",
   "editor.wordBasedSuggestions": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "explorer.sortOrder": "foldersNestsFiles",
   "editor.semanticHighlighting.enabled": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionWidget.includeNearbyQuickFixes": true,
   "editor.wordWrap": "on",
+
+  "workbench.layoutControl.enabled": false,
   "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.middleClickBehavior": "paste",
 
@@ -87,9 +91,14 @@
   "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.2,
+
+  "explorer.sortOrder": "foldersNestsFiles",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.compactFolders": false,
+  "explorer.openEditors.sortOrder": "editorOrder",
+  "explorer.openToSide": true,
+
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "extensions.ignoreRecommendations": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -129,7 +138,6 @@
   "dart.debugExternalPackageLibraries": true,
   "dart.flutterHotReloadOnSave": "all",
   "dart.showInspectorNotificationsForWidgetErrors": false,
-  // "dart.flutterSdkPath": "/Users/will/fvm/default/bin",
   "[dart]": {
     "editor.rulers": [80],
     "editor.selectionHighlight": false,
@@ -141,7 +149,6 @@
     "editor.formatOnType": true
   },
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
-  "flutter-coverage.sufficientCoverageThreshold": 80,
   "security.workspace.trust.untrustedFiles": "open",
   "editor.inlineSuggest.enabled": true,
   "[json]": {
@@ -165,44 +172,6 @@
     ".prettierrc": ".prettierignore",
     "jest.config.*": "jest.setup.*"
   },
-
-  "cSpell.userWords": [
-    "assinaturaremota",
-    "Callout",
-    "claude",
-    "Cnpj",
-    "collapsable",
-    "devkit",
-    "Excalidraw",
-    "firestore",
-    "genai",
-    "Goldens",
-    "graphcms",
-    "langchain",
-    "LTRB",
-    "mobx",
-    "nextjs",
-    "originalname",
-    "portalordem",
-    "Qdrant",
-    "signin",
-    "situacao",
-    "stackspot",
-    "subscritions",
-    "testid",
-    "usecase",
-    "Uuid",
-    "vectorstore",
-    "vectorstores",
-    "venv",
-    "vertexai",
-    "voxel",
-    "Whitespaces",
-    "william",
-    "wordpress",
-    "xxxs",
-    "ZOTP"
-  ],
   "cSpell.language": "en, pt_BR",
   "cSpell.ignorePaths": [
     "package-lock.json",
@@ -241,7 +210,6 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "tabnine.experimentalAutoImports": true,
   "workbench.iconTheme": "symbols",
 
   // prettier
@@ -252,6 +220,8 @@
   "prettier.useTabs": false,
   "prettier.trailingComma": "all",
   "prettier.arrowParens": "always",
+  "prettier.tabWidth": 2,
+  "editor.detectIndentation": false,
   // end prettier
 
   // APC settings
@@ -298,7 +268,7 @@
     ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "display: none;"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "cloudcode.duetAI.project": "packers-342910",
   "security.promptForLocalFileProtocolHandling": false,
@@ -310,7 +280,6 @@
   },
   "vscode_vibrancy.theme": "Default Dark",
   "diffEditor.codeLens": true,
-  "workbench.colorTheme": "Mint Super Dark",
   "editor.tokenColorCustomizations": {
     "[*Light*]": {
       "textMateRules": [
@@ -340,9 +309,15 @@
   "cloudcode.duetAI.inlineSuggestions.enableAuto": true,
   "workbench.preferredDarkColorTheme": "Bearded Theme Black & Emerald",
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
   },
   "redhat.telemetry.enabled": true,
   "vscode-note.notespath": "~/workspace/notes",
-  "window.customTitleBarVisibility": "auto"
+  "window.customTitleBarVisibility": "auto",
+  "workbench.colorTheme": "Mint Super Dark",
+  "opa.dependency_paths.opa": "/home/williamamaraldacosta/opa",
+  "opa.dependency_paths.regal": "/home/williamamaraldacosta/regal",
+  "opa.languageServers": ["regal"],
+  "docker.extension.enableComposeLanguageServer": false,
+  "cSpell.userWords": ["GITHUB"]
 }
