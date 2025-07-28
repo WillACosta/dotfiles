@@ -10,10 +10,11 @@
 git clone https://github.com/WillACosta/dotfiles.git
 ```
 
-2. Give permissions to the script.
+2. Give permissions to the scripts.
 
 ```shell
 chmod +x bootstrap.sh
+chmod +x path/to/repo/tmux/start_dev.sh
 ```
 
 3. Switch for bash if it's activated yet
