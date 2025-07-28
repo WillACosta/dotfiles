@@ -319,5 +319,7 @@
   "opa.dependency_paths.regal": "/home/williamamaraldacosta/regal",
   "opa.languageServers": ["regal"],
   "docker.extension.enableComposeLanguageServer": false,
-  "cSpell.userWords": ["GITHUB"]
+  "cSpell.userWords": [
+    "GITHUB"
+  ]
 }

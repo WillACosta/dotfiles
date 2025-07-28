@@ -204,6 +204,12 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+# python
+
+alias pin="pip install -r requirements.txt"
+alias psr='source .venv/bin/activate'
+alias pd='deactivate'
+
 # def ff [] {
 #   aerospace list-windows --all | fzf --bind 'enter:execute(bash 0c "aerospace focus --window-id {1}")+a'
 # }
