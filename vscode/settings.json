@@ -268,7 +268,7 @@
     ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "display: none;"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cloudcode.duetAI.project": "packers-342910",
   "security.promptForLocalFileProtocolHandling": false,
