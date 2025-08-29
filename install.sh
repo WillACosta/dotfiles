@@ -23,7 +23,7 @@ fi
 echo "📦 Bootstrapping dotfiles from: $DOTFILES_DIR"
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git)
+REQUIRED_TOOLS=(tmux zsh git grc)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
@@ -38,12 +38,18 @@ for TOOL in "${REQUIRED_TOOLS[@]}"; do
       else
         echo "❌ Homebrew not found. Please install $TOOL manually."
       fi
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+      # Install using apt-get on Ubuntu/Debian
+      if command -v apt-get >/dev/null 2>&1; then
+        echo "📦 Installing $TOOL with apt-get..."
+        sudo apt-get update -y
+        sudo apt-get install -y "$TOOL"
+      else
+        echo "❌ apt-get not found. Please install $TOOL manually."
+      fi
     else
       echo "❌ Auto-install not supported on this OS. Please install $TOOL manually."
     fi
-  else
-    echo "✅ $TOOL is installed."
-  fi
 done
 
 echo ""
@@ -58,6 +64,7 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/vscode/settings.json"]="$HOME/Library/Application Support/Code/User/settings.json"
   ["$DOTFILES_DIR/vscode/keybinds.json"]="$HOME/Library/Application Support/Code/User/keybinds.json"
   ["$DOTFILES_DIR/vscode/snippets"]="$HOME/Library/Application Support/Code/User/snippets"
+  ["$DOTFILES_DIR/grc/.grc.zsh"]="/etc/.grc.zsh"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do
@@ -79,4 +86,8 @@ for SRC in "${!FILES_TO_SYMLINK[@]}"; do
 done
 
 echo ""
-echo "✅ Dotfiles bootstrap complete."
+echo "✅ Dotfiles installed with success!"
+
+# Place start_dev script at the user directory
+cp ./tmux/start_dev.sh ~
+chmod +x ~/start_dev.sh

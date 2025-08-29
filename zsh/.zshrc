@@ -176,13 +176,14 @@ alias cat=bat
 # Git
 alias gcm="git commit -m"
 alias gcam="git commit --amend -m"
-alias ga='git add .'
+alias ga='git add'
+alias gaa='git add .'
 alias gp="git pull"
 alias gs="git status -s"
 alias gps="git push"
-alias gc="git checkout $1"
+alias gc="git checkout"
 alias gb='git branch'
-alias gst='git stash'
+alias gsts='git stash'
 
 alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 alias gd="git diff"
@@ -207,12 +208,12 @@ alias ......="cd ../../../../.."
 # python
 
 alias pin="pip install -r requirements.txt"
-alias psr='source .venv/bin/activate'
+alias psv='source .venv/bin/activate'
 alias pd='deactivate'
+alias pvc='python -m venv .venv'
 
-# def ff [] {
-#   aerospace list-windows --all | fzf --bind 'enter:execute(bash 0c "aerospace focus --window-id {1}")+a'
-# }
+alias alw='aerospace list windows'
+alias alm='aerospace list monitors'
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
@@ -244,4 +245,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 ## Start dev tmux session
-~/workspace/projects/dotfiles/tmux/start_dev.sh
+# ~/workspace/projects/dotfiles/tmux/start_dev.sh
+
+# Load aliases for GRC
+[[ -s "/etc/.grc.zsh" ]] && source /etc/.grc.zsh
