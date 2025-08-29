@@ -1,0 +1,4 @@
+regexp=.*INFO.* colour=blue
+regexp=.*WARNING.* colour=yellow
+regexp=.*DEBUG.* colour=green
+regexp=.*ERROR.* colour=red

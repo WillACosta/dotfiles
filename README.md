@@ -34,10 +34,10 @@ bash
 
 > Make sure bash version is 4.x+
 
-4. Just runs the `bootstrap` script, it will create the symbolic links for all config files.
+4. Just run the `install` script, it will install and create symlinks for all config files.
 
 ```shell
-./bootstrap.sh
+./install.sh
 ```
 
 ## Current Dotfiles
