@@ -60,19 +60,20 @@ export NVM_DIR="$HOME/.nvm"
 ZSH_THEME="spaceship"
 
 SPACESHIP_PROMPT_ORDER=(
-    user      # Username section
-    dir       # Current directory section
-    host      # Hostname section
-    git       # Git section (git_branch + git_status)
-    hg        # Mercurial section (hg_branch  + hg_status)
-    exec_time # Execution time
-    line_sep  # Line break
-    vi_mode   # Vi-mode indicator
-    jobs      # Background jobs indicator
-    exit_code # Exit code section
-    char      # Prompt character
+  user      # Username section
+  dir       # Current directory section
+  host      # Hostname section
+  git       # Git section (git_branch + git_status)
+  hg        # Mercurial section (hg_branch  + hg_status)
+  exec_time # Execution time
+  line_sep  # Line break
+  vi_mode   # Vi-mode indicator
+  jobs      # Background jobs indicator
+  exit_code # Exit code section
+  char      # Prompt character
 )
-SPACESHIP_USER_SHOW=always
+
+SPACESHIP_USER_SHOW=never
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="▲"
 SPACESHIP_CHAR_SUFFIX=" "
@@ -163,17 +164,19 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-test -f ~/.stk/bin/.zshrc && . ~/.stk/bin/.zshrc
+
+# Aliases
 
 alias c="clear"
-
 alias la=tree
 alias cat=bat
 
-# Git
+alias clogs='grc -c ~/.grc/logs.conf $1 2>&1'
+
+alias alw='aerospace list windows'
+alias alm='aerospace list monitors'
+
+# git
 alias gcm="git commit -m"
 alias gcam="git commit --amend -m"
 alias ga='git add'
@@ -191,19 +194,12 @@ alias gcall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
 
-# Docker
+# docker
 alias dco="docker compose"
 alias dps="docker ps"
 alias dpa="docker ps -a"
 alias dl="docker ps -l -q"
 alias dx="docker exec -it"
-
-# Dirs
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
 
 # python
 
@@ -211,9 +207,6 @@ alias pin="pip install -r requirements.txt"
 alias psv='source .venv/bin/activate'
 alias pd='deactivate'
 alias pvc='python -m venv .venv'
-
-alias alw='aerospace list windows'
-alias alm='aerospace list monitors'
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
@@ -249,3 +242,6 @@ unset __conda_setup
 
 # Load aliases for GRC
 [[ -s "/etc/.grc.zsh" ]] && source /etc/.grc.zsh
+
+## Deactivate conda when entering zsh
+conda deactivate

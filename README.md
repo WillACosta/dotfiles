@@ -2,8 +2,6 @@
 
 🪴 My workspace and tools settings
 
-## Getting Started
-
 ### TL;DR
 
 Install via `CURL` or `WGET`
@@ -12,6 +10,10 @@ Install via `CURL` or `WGET`
 curl -fsSL https://raw.githubusercontent.com/WillACosta/dotfiles/main/install.sh | bash
 wget -qO- https://raw.githubusercontent.com/WillACosta/dotfiles/main/install.sh | bash
 ```
+
+![current iterm profile](./assets/images/iterm.png)
+
+## Getting Started
 
 1. Clone this repository
 

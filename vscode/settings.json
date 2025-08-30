@@ -1,8 +1,4 @@
 {
-  "window.zoomLevel": 1.75,
-  "window.dialogStyle": "native",
-  "window.menuStyle": "native",
-  "window.nativeTabs": true,
   "window.commandCenter": true,
 
   "workbench.iconTheme": "symbols",
@@ -12,9 +8,9 @@
   "workbench.editor.wrapTabs": true,
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
-  // "workbench.editor.labelFormat": "default",
+  // "workbench.editor.labelFormat": "short",
 
-  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono", // cascadia mono
   // "editor.lineHeight": 1.5,
   // "editor.fontSize": 13,
   "editor.tabSize": 2,

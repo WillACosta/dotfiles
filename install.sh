@@ -68,7 +68,7 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/vscode/settings.json"]="$HOME/Library/Application Support/Code/User/settings.json"
   ["$DOTFILES_DIR/vscode/keybinds.json"]="$HOME/Library/Application Support/Code/User/keybinds.json"
   ["$DOTFILES_DIR/vscode/snippets"]="$HOME/Library/Application Support/Code/User/snippets"
-  ["$DOTFILES_DIR/grc/.grc"]="/etc/.grc"
+  ["$DOTFILES_DIR/grc/logs.conf"]="~/.grc/logs.conf"
   ["$DOTFILES_DIR/grc/.grc.zsh"]="/etc/.grc.zsh"
 )
 
@@ -93,6 +93,5 @@ done
 echo ""
 echo "✅ Dotfiles installed with success!"
 
-# Place start_dev script at the user directory
-# cp ./tmux/start_dev.sh ~
+# Give permissions to the start_dev script
 chmod +x ~/start_dev.sh
