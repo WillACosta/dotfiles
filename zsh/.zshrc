@@ -46,6 +46,9 @@ export PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin/pod:$PATH
 ## ffmpeg
 export PATH=~/audio-orchestrator-ffmpeg/bin:$PATH
 
+## spaceshiprc
+export SPACESHIP_CONFIG="$HOME/.spaceshiprc.zsh"
+
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -58,25 +61,6 @@ export NVM_DIR="$HOME/.nvm"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
-
-SPACESHIP_PROMPT_ORDER=(
-  user      # Username section
-  dir       # Current directory section
-  host      # Hostname section
-  git       # Git section (git_branch + git_status)
-  hg        # Mercurial section (hg_branch  + hg_status)
-  exec_time # Execution time
-  line_sep  # Line break
-  vi_mode   # Vi-mode indicator
-  jobs      # Background jobs indicator
-  exit_code # Exit code section
-  char      # Prompt character
-)
-
-SPACESHIP_USER_SHOW=never
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="▲"
-SPACESHIP_CHAR_SUFFIX=" "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -137,33 +121,24 @@ SPACESHIP_CHAR_SUFFIX=" "
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+source "$HOME/.zsh/spaceship/spaceship.zsh"
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Aliases
 
@@ -211,10 +186,8 @@ alias pvc='python -m venv .venv'
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
-## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/will/.dart-cli-completion/zsh-config.zsh ]] && . /Users/will/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
 
 PATH=~/.console-ninja/.bin:$PATH
 PATH=/opt/homebrew/bin/python3:$PATH
@@ -237,11 +210,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-## Start dev tmux session
-# ~/workspace/projects/dotfiles/tmux/start_dev.sh
-
 # Load aliases for GRC
 [[ -s "/etc/.grc.zsh" ]] && source /etc/.grc.zsh
 
-## Deactivate conda when entering zsh
+## Deactivate conda when starting shell env
 conda deactivate

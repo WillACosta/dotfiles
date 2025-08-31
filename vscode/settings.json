@@ -1,8 +1,9 @@
 {
   "window.commandCenter": true,
+  "window.zoomLevel": 1.75,
 
   "workbench.iconTheme": "symbols",
-  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.colorTheme": "Night Owl",
   "workbench.startupEditor": "none",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
@@ -122,6 +123,9 @@
     "editor.defaultColorDecorators": "never",
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   "prettier.semi": false,
   "prettier.jsxSingleQuote": true,
@@ -131,5 +135,9 @@
   "prettier.trailingComma": "all",
   "prettier.arrowParens": "avoid",
   "prettier.tabWidth": 2,
-  "prettier.bracketSpacing": true
+  "prettier.bracketSpacing": true,
+
+  "projectManager.git.baseFolders": [
+    "~/workspace"
+  ]
 }
