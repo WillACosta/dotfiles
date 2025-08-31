@@ -54,3 +54,4 @@ bash
 | `zsh/`       | Configuration for the [Zsh](https://zsh.org) shell.                                                                 |
 | `grc/`       | Configuration for [Generic Colouriser](https://github.com/garabik/grc/tree/master)                                  |
 | `iterm2/`    | Configuration for [iTerm2](https://iterm2.com/)                                                                     |
+| `nvimm/`     | Configuration for [Neovim](https://neovim.io/)                                                                      |

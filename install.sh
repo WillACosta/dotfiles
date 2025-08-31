@@ -69,8 +69,9 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/vscode/settings.json"]="$HOME/Library/Application Support/Code/User/settings.json"
   ["$DOTFILES_DIR/vscode/keybinds.json"]="$HOME/Library/Application Support/Code/User/keybinds.json"
   ["$DOTFILES_DIR/vscode/snippets"]="$HOME/Library/Application Support/Code/User/snippets"
-  ["$DOTFILES_DIR/grc/logs.conf"]="~/.grc/logs.conf"
+  ["$DOTFILES_DIR/grc/logs.conf"]="$HOME/.grc/logs.conf"
   ["$DOTFILES_DIR/grc/.grc.zsh"]="/etc/.grc.zsh"
+  ["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do

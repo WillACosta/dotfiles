@@ -139,5 +139,8 @@
 
   "projectManager.git.baseFolders": [
     "~/workspace"
-  ]
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
