@@ -2,8 +2,8 @@
   "window.commandCenter": true,
   "window.zoomLevel": 1.75,
 
-  "workbench.iconTheme": "symbols",
-  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "glyph.legacy",
+  "workbench.colorTheme": "Vitesse Black",
   "workbench.startupEditor": "none",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
@@ -11,7 +11,7 @@
   "workbench.editor.decorations.badges": true,
   // "workbench.editor.labelFormat": "short",
 
-  "editor.fontFamily": "JetBrainsMono Nerd Font Mono", // cascadia mono
+  "editor.fontFamily": "JetBrains Mono", // JetBrainsMono IBM Plex Mono
   // "editor.lineHeight": 1.5,
   // "editor.fontSize": 13,
   "editor.tabSize": 2,
@@ -126,6 +126,9 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   "prettier.semi": false,
   "prettier.jsxSingleQuote": true,
@@ -137,10 +140,5 @@
   "prettier.tabWidth": 2,
   "prettier.bracketSpacing": true,
 
-  "projectManager.git.baseFolders": [
-    "~/workspace"
-  ],
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "projectManager.git.baseFolders": ["~/workspace"]
 }

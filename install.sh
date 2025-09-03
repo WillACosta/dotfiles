@@ -62,7 +62,6 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/tmux/.tmux.conf"]="$HOME/.tmux.conf"
   ["$DOTFILES_DIR/tmux/start_dev.sh"]="$HOME/start_dev.sh"
   ["$DOTFILES_DIR/zsh/.zshrc"]="$HOME/.zshrc"
-  ["$DOTFILES_DIR/zsh/.spaceshiprc.zsh"]="$HOME/.spaceshiprc.zsh"
   ["$DOTFILES_DIR/aerospace/aerospace.toml"]="$HOME/.config/aerospace/aerospace.toml"
   ["$DOTFILES_DIR/borders/bordersrc"]="$HOME/.config/borders/bordersrc"
   ["$DOTFILES_DIR/hyper/.hyper.js"]="$HOME/.hyper.js"
@@ -99,4 +98,6 @@ echo "✅ Dotfiles installed with success!"
 chmod +x ~/start_dev.sh
 
 # Install spaceship
-git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1"
+
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"

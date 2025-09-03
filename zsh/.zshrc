@@ -46,9 +46,6 @@ export PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin/pod:$PATH
 ## ffmpeg
 export PATH=~/audio-orchestrator-ffmpeg/bin:$PATH
 
-## spaceshiprc
-export SPACESHIP_CONFIG="$HOME/.spaceshiprc.zsh"
-
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -126,7 +123,16 @@ ZSH_THEME="spaceship"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.zsh/spaceship/spaceship.zsh"
+
+# Spaceship config
+
+SPACESHIP_TIME_SHOW=false
+SPACESHIP_USER_SHOW=false
+SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="▲"
+SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_PACKAGE_SHOW=false
 
 # User configuration
 
