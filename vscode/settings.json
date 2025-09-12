@@ -2,18 +2,18 @@
   "window.commandCenter": true,
   "window.zoomLevel": 1.75,
 
-  "workbench.iconTheme": "glyph.legacy",
+  "workbench.iconTheme": "symbols",
   "workbench.colorTheme": "Vitesse Black",
   "workbench.startupEditor": "none",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
-  // "workbench.editor.labelFormat": "short",
 
+  "editor.lineNumbers": "relative",
   "editor.fontFamily": "JetBrains Mono", // JetBrainsMono IBM Plex Mono
-  // "editor.lineHeight": 1.5,
-  // "editor.fontSize": 13,
+  "editor.lineHeight": 1.5,
+  "editor.fontSize": 12.5,
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
   "editor.cursorStyle": "block",
@@ -140,5 +140,15 @@
   "prettier.tabWidth": 2,
   "prettier.bracketSpacing": true,
 
-  "projectManager.git.baseFolders": ["~/workspace"]
+  "projectManager.git.baseFolders": ["~/workspace"],
+
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.vimrc",
+  "vim.smartRelativeLine": true,
+  "vim.handleKeys": {
+    "C-p": false,
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false
+  }
 }

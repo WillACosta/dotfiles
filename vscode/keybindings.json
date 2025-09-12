@@ -1,0 +1,60 @@
+[
+  {
+    "key": "ctrl+w right",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+w left",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+w up",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+w down",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "cursorDown",
+    "args": { "by": "line", "value": 5 },
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "cursorUp",
+    "args": { "by": "line", "value": 5 },
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "relative-goto.select"
+  },
+  {
+    "key": "cmd+s",
+    "command": "-relative-goto.select"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "relative-goto.goto"
+  },
+  {
+    "key": "cmd+g",
+    "command": "-relative-goto.goto"
+  }
+]

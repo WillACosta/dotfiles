@@ -23,7 +23,7 @@ fi
 echo "📦 Bootstrapping dotfiles from: $DOTFILES_DIR"
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc)
+REQUIRED_TOOLS=(tmux zsh git grc neovim)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
@@ -66,11 +66,12 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/borders/bordersrc"]="$HOME/.config/borders/bordersrc"
   ["$DOTFILES_DIR/hyper/.hyper.js"]="$HOME/.hyper.js"
   ["$DOTFILES_DIR/vscode/settings.json"]="$HOME/Library/Application Support/Code/User/settings.json"
-  ["$DOTFILES_DIR/vscode/keybinds.json"]="$HOME/Library/Application Support/Code/User/keybinds.json"
+  ["$DOTFILES_DIR/vscode/keybindings.json"]="$HOME/Library/Application Support/Code/User/keybindings.json"
   ["$DOTFILES_DIR/vscode/snippets"]="$HOME/Library/Application Support/Code/User/snippets"
   ["$DOTFILES_DIR/grc/logs.conf"]="$HOME/.grc/logs.conf"
   ["$DOTFILES_DIR/grc/.grc.zsh"]="/etc/.grc.zsh"
   ["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
+  ["$DOTFILES_DIR/vim/.vimrc"]="$HOME/.vimrc"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do
@@ -98,6 +99,6 @@ echo "✅ Dotfiles installed with success!"
 chmod +x ~/start_dev.sh
 
 # Install spaceship
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
