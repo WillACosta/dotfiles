@@ -1,10 +1,12 @@
 {
   "window.commandCenter": true,
-  "window.zoomLevel": 1.75,
+  "window.zoomLevel": 1.2,
+
+  "debug.toolBarLocation": "commandCenter",
 
   "workbench.iconTheme": "symbols",
   "workbench.colorTheme": "Vitesse Black",
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.decorations.colors": true,
@@ -12,8 +14,7 @@
 
   "editor.lineNumbers": "relative",
   "editor.fontFamily": "JetBrains Mono", // JetBrainsMono IBM Plex Mono
-  "editor.lineHeight": 1.5,
-  "editor.fontSize": 12.5,
+  "editor.fontSize": 14,
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
   "editor.cursorStyle": "block",
@@ -26,6 +27,26 @@
   "editor.detectIndentation": false,
   "editor.autoClosingQuotes": "always",
   "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
     "textMateRules": [
       {
         "scope": "keyword.other.dotenv",
@@ -101,6 +122,8 @@
 
   "html.autoClosingTags": true,
 
+  "dart.flutterSdkPath": "",
+
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -129,6 +152,15 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
 
   "prettier.semi": false,
   "prettier.jsxSingleQuote": true,
@@ -150,5 +182,11 @@
     "<C-d>": true,
     "<C-s>": false,
     "<C-z>": false
+  },
+
+  "workbench.activityBar.location": "bottom",
+  "indenticator.showHover": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

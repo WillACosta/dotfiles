@@ -56,5 +56,39 @@
   {
     "key": "cmd+g",
     "command": "-relative-goto.goto"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+cmd+j",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "left"
+    }
+  },
+  {
+    "key": "ctrl+cmd+k",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "right"
+    }
+  },
+  {
+    "key": "ctrl+l",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "console.log('${TM_SELECTED_TEXT}$1');$2"
+    }
   }
 ]
