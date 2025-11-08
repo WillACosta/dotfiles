@@ -27,7 +27,12 @@ if ! tmux has-session -t "$SESSION" 2>/dev/null; then
   # Create second window for llm
   tmux new-window -t "$SESSION" -n "llm"
   tmux send-keys -t "$SESSION:llm.1" "cd $WORKDIR" C-m
-  tmux send-keys -t "$SESSION:llm.1" "gemini" C-m
+  # tmux send-keys -t "$SESSION:llm.1" "gemini" C-m
+
+  # Create third window for nvim
+  tmux new-window -t "$SESSION" -n "nvim"
+  tmux send-keys -t "$SESSION:nvim.1" "cd $WORKDIR" C-m
+  tmux send-keys -t "$SESSION:nvim.1" "clear" C-m
 
   # Focus the first window pane 1
   tmux select-window -t "$SESSION:workspace.1"

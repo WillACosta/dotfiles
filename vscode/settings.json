@@ -57,6 +57,7 @@
     ]
   },
 
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmPasteNative": false,
   "explorer.sortOrder": "foldersNestsFiles",
@@ -188,5 +189,6 @@
   "indenticator.showHover": true,
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "explorer.confirmDragAndDrop": false
 }
