@@ -225,6 +225,10 @@ alt-ctrl-shift-f = 'fullscreen'
 ## if.app-id = 'id'
 
 [[on-window-detected]]
+if.app-id = 'com.apple.iphonesimulator'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
 
@@ -329,9 +333,9 @@ run = 'move-node-to-workspace 8'
 5 = 'AW3225QF'
 6 = 'AW3225QF'
 7 = 'AW3225QF'
-8 = 'ARZOPA'
-9 = 'ARZOPA'
-Z = 'ARZOPA'
+8 = 'Built-in Retina Display'
+9 = 'Built-in Retina Display'
+Z = 'Built-in Retina Display'
 M = 'Built-in Retina Display'
 
 # Enter service mode => alt-shift-semicolon

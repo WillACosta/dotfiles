@@ -924,8 +924,6 @@ The script should do this: \(ai.prompt)</string>
 				<key>Red Component</key>
 				<string>0</string>
 			</dict>
-			<key>Background Image Location</key>
-			<string></string>
 			<key>Background Image Mode</key>
 			<integer>0</integer>
 			<key>Badge Color</key>
@@ -972,7 +970,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>20</real>
+			<real>25.444266183035715</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1345,7 +1343,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.5</real>
+			<real>0.35460379464285713</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>

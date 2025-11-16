@@ -5,7 +5,7 @@
   "debug.toolBarLocation": "commandCenter",
 
   "workbench.iconTheme": "symbols",
-  "workbench.colorTheme": "Vitesse Black",
+  "workbench.colorTheme": "Dainty – Nord (chroma 0, lightness 0)",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
@@ -123,7 +123,7 @@
 
   "html.autoClosingTags": true,
 
-  "dart.flutterSdkPath": "",
+  "dart.flutterSdkPath": "~/fvm/versions/default",
 
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -162,6 +162,20 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "[dart]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80, 100],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
 
   "prettier.semi": false,
   "prettier.jsxSingleQuote": true,
@@ -190,5 +204,16 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }

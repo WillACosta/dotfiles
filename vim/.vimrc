@@ -1,4 +1,3 @@
-
 syntax enable
 syntax on
 set nocompatible
@@ -20,6 +19,9 @@ set ai
 set si
 set wrap
 set ruler
+
+" Mirror vim buffer to SO's clipboard
+set clipboard=unnamedplus
 
 set smartindent
 set autoindent

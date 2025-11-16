@@ -20,18 +20,6 @@
     "command": "workbench.action.closeActiveEditor"
   },
   {
-    "key": "ctrl+alt+j",
-    "command": "cursorDown",
-    "args": { "by": "line", "value": 5 },
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+k",
-    "command": "cursorUp",
-    "args": { "by": "line", "value": 5 },
-    "when": "editorTextFocus"
-  },
-  {
     "key": "ctrl+shift+s",
     "command": "relative-goto.select"
   },
@@ -61,14 +49,14 @@
     "key": "ctrl+shift+c",
     "command": "workbench.files.action.collapseExplorerFolders"
   },
-  {
-    "key": "cmd+j",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "cmd+k",
-    "command": "workbench.action.previousEditor"
-  },
+  // {
+  //   "key": "cmd+j",
+  //   "command": "workbench.action.nextEditor"
+  // },
+  // {
+  //   "key": "cmd+k",
+  //   "command": "workbench.action.previousEditor"
+  // },
   {
     "key": "ctrl+cmd+j",
     "command": "moveActiveEditor",
@@ -90,5 +78,24 @@
     "args": {
       "snippet": "console.log('${TM_SELECTED_TEXT}$1');$2"
     }
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  // (un)fold sections
+  {
+    "key": "ctrl+w t",
+    "command": "editor.toggleFold"
+  },
+  {
+    "key": "ctrl+w f",
+    "command": "editor.foldAllExcept"
   }
 ]
