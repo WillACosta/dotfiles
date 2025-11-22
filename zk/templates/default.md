@@ -1,0 +1,5 @@
+# {{title}}
+
+{{content}}
+
+## References

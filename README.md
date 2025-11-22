@@ -55,3 +55,4 @@ bash
 | `grc/`       | Configuration for [Generic Colouriser](https://github.com/garabik/grc/tree/master)                                  |
 | `iterm2/`    | Configuration for [iTerm2](https://iterm2.com/)                                                                     |
 | `nvimm/`     | Configuration for [Neovim](https://neovim.io/) — using [LazyVim](https://www.lazyvim.org/)                          |
+| `zk/`        | Configuration for [zk](https://zk-org.github.io/zk/tips/getting-started.html) note-taking assistant                 |
