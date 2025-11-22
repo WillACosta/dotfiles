@@ -2,6 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export LC_ALL=en_US.UTF-8
+export EDITOR=vim
 
 ## python
 export PATH=$PATH:/Users/will/Library/Python/3.9/bin

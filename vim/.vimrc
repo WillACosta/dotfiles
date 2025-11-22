@@ -26,13 +26,16 @@ set clipboard=unnamedplus
 set smartindent
 set autoindent
 
+set wildignore=.*
+let NERDTreeShowHidden=1
+
 set backspace=indent,eol,start
 set smartcase
 set hlsearch
 set incsearch
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 set noundofile
@@ -46,11 +49,11 @@ map <leader>w :w!<cr>
 map <leader>q :q!<cr>
 nmap <silent> <leader><CR> o<ESC>
 
-nnoremap K :m .-2<cr>==
-inoremap J <esc>:m .+1<cr>==gi
-inoremap K <esc>:m .-2<cr>==gi
-vnoremap J :m '>+1<cr>gv=gv
-vnoremap K :m '<-2<cr>gv=gv
+" nnoremap K :m .-2<cr>==
+" inoremap J <esc>:m .+1<cr>==gi
+" inoremap K <esc>:m .-2<cr>==gi
+" vnoremap J :m '>+1<cr>gv=gv
+" vnoremap K :m '<-2<cr>gv=gv
 
 " Move tabs
 
@@ -74,10 +77,10 @@ inoremap <c-b> <esc>:Lex<cr>:vertical resize 30<cr>
 
 " {{{ Python
 " hint: in the insert mode, type $r to expand return
-au FileType python inoremap <buffer> $r return
-au FileType python inoremap <buffer> $i import
-au FileType python inoremap <buffer> $p print
-au FileType python inoremap <buffer> $f #--- <esc>a
+" au FileType python inoremap <buffer> $r return
+" au FileType python inoremap <buffer> $i import
+" au FileType python inoremap <buffer> $p print
+" au FileType python inoremap <buffer> $f #--- <esc>a
 " au FileType python map <buffer> <leader>1 /class
 " au FileType python map <buffer> <leader>2 /def
 " au FileType python map <buffer> <leader>C ?class

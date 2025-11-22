@@ -12,7 +12,7 @@
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
 
-  "editor.lineNumbers": "relative",
+  // "editor.lineNumbers": "on",
   "editor.fontFamily": "JetBrains Mono", // JetBrainsMono IBM Plex Mono
   "editor.fontSize": 14,
   "editor.tabSize": 2,
@@ -74,9 +74,9 @@
     ".env.local": ".env*",
     ".env": ".env*",
     "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
-    "*.dart": "${capture}.g.dart, ${capture}.chopper.dart",
     ".prettierrc": ".prettierignore",
-    "jest.config.*": "jest.setup.*"
+    "jest.config.*": "jest.setup.*",
+    "*.dart": "${capture}.g.dart, ${capture}.chopper.dart, ${capture}.freezed.dart"
   },
 
   "files.trimTrailingWhitespace": true,
@@ -196,7 +196,8 @@
     "C-p": false,
     "<C-d>": true,
     "<C-s>": false,
-    "<C-z>": false
+    "<C-z>": false,
+    "<C-f>": false
   },
 
   "workbench.activityBar.location": "bottom",
@@ -215,5 +216,6 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "editor.lineNumbers": "relative"
 }
