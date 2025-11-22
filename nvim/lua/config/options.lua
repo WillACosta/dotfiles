@@ -21,3 +21,6 @@ vim.opt.splitkeep = "cursor"
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.wrap = false
+
+-- Show hidden files as default
+vim.g.NERDTreeShowHidden=1
