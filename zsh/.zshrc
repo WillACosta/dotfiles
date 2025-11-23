@@ -223,3 +223,6 @@ unset __conda_setup
 ## Deactivate conda when starting shell env
 conda deactivate
 export PATH="$HOME/.local/bin:$PATH"
+
+# Init Zoxide CLI
+eval "$(zoxide init zsh)"

@@ -1,0 +1,20 @@
+{
+  "ide": {
+    "enabled": true,
+    "hasSeenNudge": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "theme": "Atom One"
+  },
+  "output": {
+    "format": "text"
+  },
+  "general": {
+    "vimMode": true
+  }
+}

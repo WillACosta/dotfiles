@@ -23,7 +23,7 @@ fi
 echo "📦 Bootstrapping dotfiles from: $DOTFILES_DIR"
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
@@ -72,6 +72,7 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/grc/.grc.zsh"]="/etc/.grc.zsh"
   ["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
   ["$DOTFILES_DIR/vim/.vimrc"]="$HOME/.vimrc"
+  ["$DOTFILES_DIR/gemini/settings.json"]="$HOME/.gemini/settings.json"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do

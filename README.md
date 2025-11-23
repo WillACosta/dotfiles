@@ -55,4 +55,12 @@ bash
 | `grc/`       | Configuration for [Generic Colouriser](https://github.com/garabik/grc/tree/master)                                  |
 | `iterm2/`    | Configuration for [iTerm2](https://iterm2.com/)                                                                     |
 | `nvimm/`     | Configuration for [Neovim](https://neovim.io/) — using [LazyVim](https://www.lazyvim.org/)                          |
-| `zk/`        | Configuration for [zk](https://zk-org.github.io/zk/tips/getting-started.html) note-taking assistant                 |
+
+## CLI Commands
+
+| Command                                                       | Description                                                   | Has Dotfiles? |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------- |
+| [`bat`](https://github.com/sharkdp/bat)                       | A replacement for `cat` command with syntax highlight support | []            |
+| [`gemini`](https://geminicli.com/docs/cli)                    | Coding agent by Google.                                       | [x]           |
+| [`zk`](https://zk-org.github.io/zk/tips/getting-started.html) | Note-taking CLI management.                                   | [x]           |
+| [`zoxide`](https://github.com/ajeetdsouza/zoxide)             | A `cd` command replacement.                                   | []            |
