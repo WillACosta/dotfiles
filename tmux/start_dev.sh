@@ -16,7 +16,7 @@ if ! tmux has-session -t "$SESSION" 2>/dev/null; then
 
 	# Send commands to pane 1
 	tmux send-keys -t "$SESSION:workspace.1" "cd $WORKDIR" C-m
-	tmux send-keys -t "$SESSION:workspace.1" "cd free_my_mind/fmm" C-m
+	tmux send-keys -t "$SESSION:workspace.1" "cd mobile/flutter/free_my_mind" C-m
 	# tmux send-keys -t "$SESSION:workspace.1" "conda deactivate" C-m
 	tmux send-keys -t "$SESSION:workspace.1" "clear" C-m
 
@@ -27,7 +27,7 @@ if ! tmux has-session -t "$SESSION" 2>/dev/null; then
 
 	# Create second window for llm
 	tmux new-window -t "$SESSION" -n "llm"
-	tmux send-keys -t "$SESSION:llm.1" "cd $WORKDIR/free_my_mind/fmm" C-m
+	tmux send-keys -t "$SESSION:llm.1" "cd $WORKDIR/mobile/flutter/free_my_mind" C-m
     tmux send-keys -t "$SESSION:llm.1" "gemini" C-m
 
 	# Create third window for nvim

@@ -5,7 +5,7 @@
   "debug.toolBarLocation": "commandCenter",
 
   "workbench.iconTheme": "symbols",
-  "workbench.colorTheme": "Dainty – Nord (chroma 0, lightness 0)",
+  "workbench.colorTheme": "paddy-dark",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,

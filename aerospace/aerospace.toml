@@ -224,9 +224,9 @@ alt-ctrl-shift-f = 'fullscreen'
 ## if.app-name-regex-substring = 'substring to search'
 ## if.app-id = 'id'
 
-[[on-window-detected]]
-if.app-id = 'com.apple.iphonesimulator'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.apple.iphonesimulator'
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -325,7 +325,8 @@ run = 'move-node-to-workspace 8'
 
 # Monitors Workspaces
 [workspace-to-monitor-force-assignment]
-# main or secondary or Built-in Retina Display or ARZOPA or Sidecar Display (AirPlay)
+# main or secondary or
+# Built-in Retina Display or ARZOPA or Sidecar Display (AirPlay) or EM160TP-A
 1 = 'AW3225QF'
 2 = 'AW3225QF'
 3 = 'AW3225QF'
@@ -333,9 +334,9 @@ run = 'move-node-to-workspace 8'
 5 = 'AW3225QF'
 6 = 'AW3225QF'
 7 = 'AW3225QF'
-8 = 'ARZOPA'
-9 = 'ARZOPA'
-Z = 'ARZOPA'
+8 = 'EM160TP-A'
+9 = 'EM160TP-A'
+Z = 'EM160TP-A'
 M = 'Built-in Retina Display'
 
 # Enter service mode => alt-shift-semicolon
