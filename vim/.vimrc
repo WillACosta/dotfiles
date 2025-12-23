@@ -20,8 +20,11 @@ set si
 set wrap
 set ruler
 
-" Mirror vim buffer to SO's clipboard
+" Mirror vim register to SO's clipboard
 set clipboard=unnamedplus
+
+" Replace and paste
+xnoremap("<leader>p", "\"_dP")
 
 set smartindent
 set autoindent
@@ -54,6 +57,13 @@ nmap <silent> <leader><CR> o<ESC>
 " inoremap K <esc>:m .-2<cr>==gi
 " vnoremap J :m '>+1<cr>gv=gv
 " vnoremap K :m '<-2<cr>gv=gv
+
+" Remap control + d and u to center the code 
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
+
 
 " Move tabs
 

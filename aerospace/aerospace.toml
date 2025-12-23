@@ -224,9 +224,9 @@ alt-ctrl-shift-f = 'fullscreen'
 ## if.app-name-regex-substring = 'substring to search'
 ## if.app-id = 'id'
 
-# [[on-window-detected]]
-# if.app-id = 'com.apple.iphonesimulator'
-# run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.apple.iphonesimulator'
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -252,9 +252,9 @@ run = 'layout floating'
 if.app-id = 'com.apple.iCal'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.apple.Preview'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Preview'
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.QuickTimePlayerX'
@@ -336,7 +336,7 @@ run = 'move-node-to-workspace 8'
 7 = 'AW3225QF'
 8 = 'EM160TP-A'
 9 = 'EM160TP-A'
-Z = 'EM160TP-A'
+Z = 'Built-in Retina Display'
 M = 'Built-in Retina Display'
 
 # Enter service mode => alt-shift-semicolon
