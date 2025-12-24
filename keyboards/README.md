@@ -1,8 +1,8 @@
 ## My keyboard config
 
-This is my QMK/VIAL key-maps for the [Silakka54]() split keyboard.
+This is my [QMK/VIAL](https://qmk.fm/) key-maps for the [Silakka54](https://squalius-cephalus.github.io/silakka54/) split keyboard.
 Currently I'm trying to get used to the Corne layout (6x3) as I'm planning to switch to a wireless
-version build with [ZMK]().
+version build with [ZMK](https://zmk.dev/).
 
 ![silakka_54](../assets/images/setup.jpeg)
 
