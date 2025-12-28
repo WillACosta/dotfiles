@@ -64,3 +64,10 @@ bash
 | [`gemini`](https://geminicli.com/docs/cli)                    | Coding agent by Google.                                       | [x]           |
 | [`zk`](https://zk-org.github.io/zk/tips/getting-started.html) | Note-taking CLI management.                                   | [x]           |
 | [`zoxide`](https://github.com/ajeetdsouza/zoxide)             | A `cd` command replacement.                                   | []            |
+
+## Keyboards Profile
+
+| Keyboard  | Layout              | Config                                              |
+| --------- | ------------------- | --------------------------------------------------- |
+| Sillaka54 | QWERTY - Default    | [Config file](./keyboards/silakka_54.vil)           |
+| Sillaka54 | QERTY - Corne (3x5) | [Config file](./keyboards/silakka_corne_layout.vil) |
