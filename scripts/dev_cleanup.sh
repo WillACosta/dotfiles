@@ -4,7 +4,7 @@ echo "This script cleans up common development-related directories."
 echo "It will search for 'build', 'node_modules', '.venv', and 'venv' directories."
 echo
 
-read "search_path?Enter the directory path to search in (or press Enter to use the current directory): "
+read "search_path?Enter the directory path to search in (default is ~/workspace/projects): "
 
 if [[ -z "$search_path" ]]; then
   search_path="~/workspace/projects"
@@ -39,6 +39,21 @@ else
     done
     echo
     echo "✅ All selected directories have been deleted."
+
+    # Post-cleanup commands
+    local -A post_cleanup_commands
+    post_cleanup_commands=(
+      "pnpm store prune" "Prune the pnpm store"
+    )
+
+    echo
+    for cmd in "${(@k)post_cleanup_commands}"; do
+      read "run_cmd?Run '${post_cleanup_commands[$cmd]}' ($cmd)? (y/N) "
+      if [[ "$run_cmd" =~ ^[Yy]$ ]]; then
+        echo "Running '$cmd'..."
+        eval "$cmd"
+      fi
+    done
   else
     echo "❌ Deletion cancelled."
   fi

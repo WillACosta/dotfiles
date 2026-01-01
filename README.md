@@ -74,10 +74,20 @@ bash
 
 ## Utilities
 
-As a developer, we constantly find ourselves with a huge number of "build", ".venv", "node_modules", etc, folders during our development process, these folders often use a lot of space in the SSD, so we should clean them when they aren't being used, so here it's the current script to clean up these directories:
+### Development Cleanup Script
+
+This repository includes a utility script to clean common development-related directories (e.g., `build`, `node_modules`, `.venv`, `venv`).
+
+**How to run:**
 
 ```shell
-./dotfiles/scripts/dev_cleanup
+./scripts/dev_cleanup.sh
 ```
 
-The shell script will look for all folders under the running directory and find these dirs and list all of them before asking for deletion.
+**Features:**
+
+- **Default Search Path:** By default, the script searches for directories in `~/workspace/projects`.
+- **Custom Search Path:** You can provide a custom path to search in when prompted.
+- **Readable Output:** The script lists the directories to be deleted in a user-friendly format (e.g., `- node_modules in /path/to/project`).
+- **Confirmation:** It prompts for confirmation before deleting any directories.
+- **Post-Cleanup Commands:** After cleaning the directories, the script will ask if you want to run additional cleanup commands, such as `pnpm store prune`.
