@@ -71,3 +71,13 @@ bash
 | --------- | ------------------- | --------------------------------------------------- |
 | Sillaka54 | QWERTY - Default    | [Config file](./keyboards/silakka_54.vil)           |
 | Sillaka54 | QERTY - Corne (3x5) | [Config file](./keyboards/silakka_corne_layout.vil) |
+
+## Utilities
+
+As a developer, we constantly find ourselves with a huge number of "build", ".venv", "node_modules", etc, folders during our development process, these folders often use a lot of space in the SSD, so we should clean them when they aren't being used, so here it's the current script to clean up these directories:
+
+```shell
+./dotfiles/scripts/dev_cleanup
+```
+
+The shell script will look for all folders under the running directory and find these dirs and list all of them before asking for deletion.

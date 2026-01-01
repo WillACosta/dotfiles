@@ -5,7 +5,7 @@
   "debug.toolBarLocation": "commandCenter",
 
   "workbench.iconTheme": "symbols",
-  "workbench.colorTheme": "Elegant Dark Blue",
+  "workbench.colorTheme": "Vesper",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
@@ -222,5 +222,9 @@
   "editor.lineNumbers": "relative",
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
-  }
+  },
+  "cSpell.userWords": [
+    "venv"
+  ],
+  "window.confirmSaveUntitledWorkspace": false
 }
