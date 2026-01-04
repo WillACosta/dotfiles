@@ -224,6 +224,9 @@
     "editor.defaultFormatter": "sumneko.lua"
   },
   "cSpell.userWords": [
+    "keymaps",
+    "nuphy",
+    "Silakka",
     "venv"
   ],
   "window.confirmSaveUntitledWorkspace": false

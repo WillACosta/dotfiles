@@ -1,10 +1,14 @@
-## My keyboard config
+## Custom Keyboards config
 
-This is my [QMK/VIAL](https://qmk.fm/) key-maps for the [Silakka54](https://squalius-cephalus.github.io/silakka54/) split keyboard.
-Currently I'm trying to get used to the Corne layout (6x3) as I'm planning to switch to a wireless
-version build with [ZMK](https://zmk.dev/).
+!["split keyboard image"](../assets/images/setup.jpeg)
 
-![silakka_54](../assets/images/setup.jpeg)
+### Silakka54
 
-- [**Config file for the default Silakka54 layout**](./silakka_54.vil)
-- [**Config file for the corne version**](./silakka_corne_layout.vil)
+- Default and custom keymaps for the split custom Silakka54 (Open Source)
+- Key mapping is created using [VIAL](vial.rocks)
+- Custom keymaps to simulate a [Corne Layout](https://github.com/foostan/crkbd/tree/main)
+
+### Nuphy Air75 V2
+
+- Default and custom settings for the nuphy 75% layout keyboard
+- Key mapping is created with [VIA](via.app)
