@@ -9,10 +9,12 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget borders']
+
+# Setup borders
+# after-startup-command = ['exec-and-forget borders']
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -106,15 +108,9 @@ outer.right = 15
 alt-cmd-i = 'exec-and-forget open -a /Applications/iTerm.app'
 alt-cmd-o = 'exec-and-forget open -a /Applications/Obsidian.app'
 # alt-v = 'exec-and-forget open -a /Applications/VsCode.app'
-alt-cmd-n = 'exec-and-forget open -a /Applications/Notion.app'
+# alt-cmd-n = 'exec-and-forget open -a /Applications/Notion.app'
 # alt-d = 'exec-and-forget open -a /Applications/Docker.app'
 alt-cmd-s = 'exec-and-forget open -a /Applications/Spotify.app'
-
-## Join
-ctrl-alt-shift-left = 'join-with left'
-ctrl-alt-shift-down = 'join-with down'
-ctrl-alt-shift-up = 'join-with up'
-ctrl-alt-shift-right = 'join-with right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -133,19 +129,19 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-minus = 'resize smart -80'
-alt-equal = 'resize smart +80'
+alt-u= 'resize smart -80'
+alt-p= 'resize smart +80'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-q = 'workspace 1'
-alt-w = 'workspace 2'
-alt-e = 'workspace 3'
-alt-r = 'workspace 4'
-alt-t = 'workspace 5'
-alt-y = 'workspace 6'
-alt-u = 'workspace 7'
-alt-i = 'workspace 8'
-alt-o = 'workspace 9'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 # alt-a = 'workspace A'
 # alt-b = 'workspace B'
 # alt-c = 'workspace C'
@@ -170,16 +166,16 @@ alt-m = 'workspace M'
 # alt-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-q = 'move-node-to-workspace 1'
-alt-shift-w = 'move-node-to-workspace 2'
-alt-shift-e = 'move-node-to-workspace 3'
-alt-shift-r = 'move-node-to-workspace 4'
-alt-shift-t = 'move-node-to-workspace 5'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
 
-alt-shift-y = 'move-node-to-workspace 6'
-alt-shift-u = 'move-node-to-workspace 7'
-alt-shift-i = 'move-node-to-workspace 8'
-alt-shift-o = 'move-node-to-workspace 9'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-b = 'move-node-to-workspace B'
 # alt-shift-c = 'move-node-to-workspace C'
@@ -229,9 +225,9 @@ alt-ctrl-shift-f = 'fullscreen'
 if.app-id = 'com.apple.iphonesimulator'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'docker'
@@ -363,3 +359,7 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+[mode.app.binding]
+
+alt-n = 'exec-and-forget open -a /Applications/Notion.app'

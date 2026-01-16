@@ -224,6 +224,8 @@
     "editor.defaultFormatter": "sumneko.lua"
   },
   "cSpell.userWords": [
+    "keymap",
+    "Keymapping",
     "keymaps",
     "nuphy",
     "Silakka",

@@ -177,18 +177,28 @@ alias gr='git remote'
 alias gre='git reset'
 
 # docker
-alias dco="docker compose"
-alias dps="docker ps"
-alias dpa="docker ps -a"
+alias dcb="docker compose up --build -d"
+alias dcu="docker compose up -d"
 alias dl="docker ps -l -q"
 alias dx="docker exec -it"
 
-# python
+alias dsa="docker stop $(docker ps -q)"
+alias drma="docker rm $(docker ps -a -q)"
+alias dpra="docker system prune -a --volumes"
+alias dpr="docker system prune"
 
-alias pin="pip install -r requirements.txt"
+# Run grc for stdout from a command execution
+alias clogs='grc -c ~/.grc/logs.conf $1 2>&1'
+
+alias pi="pip install -r requirements.txt"
 alias psv='source .venv/bin/activate'
 alias pd='deactivate'
-alias pvc='python -m venv .venv'
+alias pcv='python -m venv .venv'
+
+alias pyrun='poetry run python main.py'
+
+alias lproc='sudo lsof -i'
+alias kproc='kill'
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
