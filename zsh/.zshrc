@@ -236,3 +236,5 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Init Zoxide CLI
 eval "$(zoxide init zsh)"
+
+export ZK_NOTEBOOK_DIR=~/zk-notebook

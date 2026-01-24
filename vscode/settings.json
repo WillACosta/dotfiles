@@ -49,14 +49,7 @@
         }
       ]
     },
-    "textMateRules": [
-      {
-        "scope": "keyword.other.dotenv",
-        "settings": {
-          "foreground": "#FF000000"
-        }
-      }
-    ]
+    "textMateRules": []
   },
 
   "explorer.compactFolders": false,
@@ -224,12 +217,17 @@
     "editor.defaultFormatter": "sumneko.lua"
   },
   "cSpell.userWords": [
+    "Immich",
     "keymap",
     "Keymapping",
     "keymaps",
+    "linux",
     "nuphy",
+    "Opti",
     "Silakka",
-    "venv"
+    "venv",
+    "zimaos"
   ],
-  "window.confirmSaveUntitledWorkspace": false
+  "window.confirmSaveUntitledWorkspace": false,
+  "dotenv.enableAutocloaking": false
 }
