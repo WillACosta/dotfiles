@@ -194,8 +194,6 @@
     "<C-z>": false,
     "<C-f>": false
   },
-
-  "workbench.activityBar.location": "bottom",
   "indenticator.showHover": true,
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
