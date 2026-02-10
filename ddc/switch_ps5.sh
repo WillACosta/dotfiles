@@ -1,0 +1,1 @@
+sd 1 hdmi1      # Alienware to PS5

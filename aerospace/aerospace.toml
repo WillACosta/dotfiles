@@ -233,6 +233,14 @@ if.app-name-regex-substring = 'docker'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'com.valvesoftware.steam'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'com.valvesoftware.steam.helper'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.riotgames.RiotGames.RiotClient'
 run = 'layout floating'
 

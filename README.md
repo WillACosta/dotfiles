@@ -58,12 +58,13 @@ bash
 
 ## CLI Commands
 
-| Command                                                       | Description                                                   | Has Dotfiles? |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------- |
-| [`bat`](https://github.com/sharkdp/bat)                       | A replacement for `cat` command with syntax highlight support | []            |
-| [`gemini`](https://geminicli.com/docs/cli)                    | Coding agent by Google.                                       | [x]           |
-| [`zk`](https://zk-org.github.io/zk/tips/getting-started.html) | Note-taking CLI management.                                   | [x]           |
-| [`zoxide`](https://github.com/ajeetdsouza/zoxide)             | A `cd` command replacement.                                   | []            |
+| Command                                                       | Description                                                   | Has Dotfiles?                 |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------- |
+| [`bat`](https://github.com/sharkdp/bat)                       | A replacement for `cat` command with syntax highlight support | []                            |
+| [`gemini`](https://geminicli.com/docs/cli)                    | Coding agent by Google.                                       | [x]                           |
+| [`zk`](https://zk-org.github.io/zk/tips/getting-started.html) | Note-taking CLI management.                                   | [x]                           |
+| [`zoxide`](https://github.com/ajeetdsouza/zoxide)             | A `cd` command replacement.                                   | []                            |
+| [`sd`](https://github.com/waydabber/m1ddc)                    | A lightweight CLI to control monitors using DDC/CI protocol   | It has a shortcut in `.zshrc` |
 
 ## Keyboards Profile
 
