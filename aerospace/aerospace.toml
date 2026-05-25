@@ -290,6 +290,10 @@ if.app-id = 'dev.warp.Warp-Stable'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace 2'
 
@@ -317,6 +321,10 @@ run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'emmo.prodrafts'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.goodnotesapp.x'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
