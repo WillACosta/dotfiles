@@ -10,7 +10,7 @@ if ! tmux has-session -t "$SESSION" 2>/dev/null; then
 
 	tmux split-window -v -t "$SESSION:wrksp"
 	tmux send-keys -t "$SESSION:wrksp.1" "cd $WORKDIR && clear" C-m
-	tmux send-keys -t "$SESSION:wks.2" "cd $WORKDIR && clear" C-m
+	tmux send-keys -t "$SESSION:wrksp.2" "cd $WORKDIR && clear" C-m
 
 	tmux new-window -t "$SESSION" -n "llm"
 	tmux send-keys -t "$SESSION:llm.1" "cd $WORKDIR && clear" C-m
