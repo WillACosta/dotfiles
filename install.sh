@@ -59,7 +59,7 @@ echo ""
 echo "🔗 Creating symbolic links..."
 
 declare -A FILES_TO_SYMLINK=(
-  ["$DOTFILES_DIR/tmux/.tmux.conf"]="$HOME/.tmux.conf"
+  ["$DOTFILES_DIR/tmux/.tmux.conf"]="$HOME/.tmux.con"
   ["$DOTFILES_DIR/tmux/start_dev.sh"]="$HOME/start_dev.sh"
   ["$DOTFILES_DIR/zsh/.zshrc"]="$HOME/.zshrc"
   ["$DOTFILES_DIR/aerospace/aerospace.toml"]="$HOME/.config/aerospace/aerospace.toml"
@@ -73,6 +73,8 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
   ["$DOTFILES_DIR/vim/.vimrc"]="$HOME/.vimrc"
   ["$DOTFILES_DIR/gemini/settings.json"]="$HOME/.gemini/settings.json"
+  ["$DOTFILES_DIR/skhd/.skhdrc"]="$HOME/.skhdrc"
+  ["$DOTFILES_DIR/skhd/.skhdrc/switch_display.sh"]="/usr/local/bin/sd"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do
@@ -98,6 +100,7 @@ echo "✅ Dotfiles installed with success!"
 
 # Give permissions to the start_dev script
 chmod +x ~/start_dev.sh
+chmod +x /usr/local/bin/sd
 
 ## Install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

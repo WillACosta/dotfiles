@@ -7,18 +7,42 @@ There are some payed and _Open-Source_ options out there, but we can use a very 
 ## MacOS (Apple Silicon Only)
 
 ```shell
-sd() {
-  local display=$1
-  local input=$2
-  case $input in
-    dp) val=15 ;;
-    hdmi1) val=17 ;;
-    hdmi2) val=18 ;;
-    usbc) val=27 ;;
-    *) echo "Unknown input: $input"; return 1 ;;
+#!/bin/bash
+
+# Define your Monitor Indicies (Adjust based on 'm1ddc display list')
+MON_ALIENWARE=1
+MON_UPERFECT=2
+
+# Function to get DDC value
+get_val() {
+  case $1 in
+    dp) echo 15 ;;
+    hdmi1) echo 17 ;;
+    hdmi2) echo 18 ;;
+    usbc) echo 27 ;;
+    *) echo "Unknown"; exit 1 ;;
   esac
-  m1ddc display "$display" set input "$val"
 }
+
+# Logic for switching
+case $1 in
+  1|2) # Switch a single monitor: sd <index> <input>
+    val=$(get_val "$2")
+    m1ddc display "$1" set input "$val"
+    ;;
+
+  both) # Switch both: sd both <input_mon1> <input_mon2>
+    val1=$(get_val "$2")
+    val2=$(get_val "$3")
+    m1ddc display $MON_ALIENWARE set input "$val1"
+    m1ddc display $MON_UPERFECT set input "$val2"
+    ;;
+
+  *)
+    echo "Usage: sd [1|2|both] [input]"
+    exit 1
+    ;;
+esac
 ```
 
 ## Windows

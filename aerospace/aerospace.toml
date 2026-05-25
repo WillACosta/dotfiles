@@ -224,9 +224,9 @@ alt-ctrl-shift-f = 'fullscreen'
 if.app-id = 'com.apple.iphonesimulator'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'docker'
@@ -310,9 +310,21 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 3'
 
-## Figma
+## Creator Workspace
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'emmo.prodrafts'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'org.kicad.kicad'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'com.shapr3d.shapr'
 run = 'move-node-to-workspace 4'
 
 ## Spotify -> Second monitor 8 and 9

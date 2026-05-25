@@ -141,11 +141,11 @@ SPACESHIP_PACKAGE_SHOW=false
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+# else
+#  export EDITOR='mvim'
+# fi
 
 # Aliases
 
@@ -182,8 +182,8 @@ alias dcu="docker compose up -d"
 alias dl="docker ps -l -q"
 alias dx="docker exec -it"
 
-alias dsa="docker stop $(docker ps -q)"
-alias drma="docker rm $(docker ps -a -q)"
+alias dsa='docker stop $(docker ps -q)'
+alias drma='docker rm $(docker ps -a -q)'
 alias dpra="docker system prune -a --volumes"
 alias dpr="docker system prune"
 
@@ -214,44 +214,27 @@ PATH=/opt/homebrew/bin/python3:$PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/opt/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# conda deactivate
 
 # Load aliases for GRC
 [[ -s "/etc/.grc.zsh" ]] && source /etc/.grc.zsh
 
-## Deactivate conda when starting shell env
-conda deactivate
 export PATH="$HOME/.local/bin:$PATH"
 
-# Init Zoxide CLI
+# Zoxide CLI
 eval "$(zoxide init zsh)"
-
 export ZK_NOTEBOOK_DIR=~/zk-notebook
 
-## ------ DDC/CI -----------
-
-sd() {
-  local display=$1
-  local input=$2
-  case $input in
-    dp) val=15 ;;
-    hdmi1) val=17 ;;
-    hdmi2) val=18 ;;
-    usbc) val=27 ;;
-    *) echo "Unknown input: $input"; return 1 ;;
-  esac
-  m1ddc display "$display" set input "$val"
-}
-
-
+# Start tmux session
+~/start_dev.sh

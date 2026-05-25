@@ -4,17 +4,23 @@
 
   "debug.toolBarLocation": "commandCenter",
 
-  "workbench.iconTheme": "symbols",
+  "workbench.iconTheme": "catppuccin-perfect-dark",
   "workbench.colorTheme": "Vesper",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
-
-  // "editor.lineNumbers": "on",
+  "editor.renderWhitespace": "selection",
+  "editor.cursorBlinking": "smooth",
+  "editor.smoothScrolling": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.fontWeight": "376",
   "editor.fontFamily": "JetBrains Mono", // JetBrainsMono IBM Plex Mono
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.5,
+  "workbench.editor.empty.hint": "hidden",
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
   "editor.cursorStyle": "block",
@@ -194,7 +200,7 @@
     "<C-z>": false,
     "<C-f>": false
   },
-  "indenticator.showHover": true,
+  // "indenticator.showHover": true,
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -215,17 +221,31 @@
     "editor.defaultFormatter": "sumneko.lua"
   },
   "cSpell.userWords": [
+    "agentic",
+    "Agentic",
+    "Convolutional",
+    "frontmatter",
+    "gemini",
+    "httpx",
     "Immich",
+    "keycaps",
     "keymap",
     "Keymapping",
     "keymaps",
     "linux",
     "nuphy",
     "Opti",
+    "overengineering",
     "Silakka",
+    "Streamlit",
     "venv",
+    "WORKDIR",
+    "wrksp",
     "zimaos"
   ],
   "window.confirmSaveUntitledWorkspace": false,
-  "dotenv.enableAutocloaking": false
+  "dotenv.enableAutocloaking": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "chat.viewSessions.orientation": "stacked",
+  "editor.occurrencesHighlight": "multiFile"
 }
