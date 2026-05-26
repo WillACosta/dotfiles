@@ -8,6 +8,7 @@ config.default_cwd = "~"
 -- Font
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 19
+config.line_height = 1.2
 
 -- UI
 -- config.color_scheme = 'Black Metal (Khold) (base16)'
@@ -28,6 +29,12 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.8
 config.macos_window_background_blur = 68
+config.window_padding = {
+  left = 10, 
+  right = 10,
+  top = 10,
+  bottom = 5
+}
 
 --[[config.colors = {
 	foreground = "#CBE0F0",
@@ -41,4 +48,9 @@ config.macos_window_background_blur = 68
 	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
 }-]]
 
+-- Performance Settings
+config.max_fps = 120
+-- config.prefer_egl = true
+
 return config
+
