@@ -5,7 +5,7 @@
   "debug.toolBarLocation": "commandCenter",
 
   "workbench.iconTheme": "catppuccin-perfect-dark",
-  "workbench.colorTheme": "Vesper",
+  "workbench.colorTheme": "Rosé Pine",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.wrapTabs": true,
@@ -31,8 +31,8 @@
   "editor.linkedEditing": true,
   "editor.autoClosingBrackets": "always",
   "editor.detectIndentation": false,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 3000,
+  // "files.autoSave": "afterDelay",
+  // "files.autoSaveDelay": 3000,
   "editor.autoClosingQuotes": "always",
   "editor.tokenColorCustomizations": {
     "[*Light*]": {
