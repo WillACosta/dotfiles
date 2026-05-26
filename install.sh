@@ -75,6 +75,8 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/gemini/settings.json"]="$HOME/.gemini/settings.json"
   ["$DOTFILES_DIR/skhd/.skhdrc"]="$HOME/.skhdrc"
   ["$DOTFILES_DIR/skhd/.skhdrc/switch_display.sh"]="/usr/local/bin/sd"
+  ["$DOTFILES_DIR/eza/theme.yml"]="~/.config/eza/theme.yml"
+  ["$DOTFILES_DIR/wezterm/.wezterm.lua"]="~/.wezterm.lua"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do
