@@ -23,7 +23,7 @@ fi
 echo "📦 Bootstrapping dotfiles from: $DOTFILES_DIR"
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
@@ -122,3 +122,4 @@ git config --global core.editor "vim"
 git config --global core.pager bat
 
 source ~/.zshrc
+

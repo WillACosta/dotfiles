@@ -149,6 +149,8 @@ SPACESHIP_PACKAGE_SHOW=false
 
 # Aliases
 
+alias ls="eza --icons=always"
+
 alias c="clear"
 alias la=tree
 alias cat=bat
@@ -238,3 +240,13 @@ export ZK_NOTEBOOK_DIR=~/zk-notebook
 
 # Start tmux session
 ~/start_dev.sh
+
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
