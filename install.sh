@@ -23,7 +23,7 @@ fi
 echo "📦 Bootstrapping dotfiles from: $DOTFILES_DIR"
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k codex)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
@@ -77,6 +77,7 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/skhd/.skhdrc/switch_display.sh"]="/usr/local/bin/sd"
   ["$DOTFILES_DIR/eza/theme.yml"]="~/.config/eza/theme.yml"
   ["$DOTFILES_DIR/wezterm/.wezterm.lua"]="~/.wezterm.lua"
+  ["$DOTFILES_DIR/p10k/.p10k.zsh"]="~/.p10k.zsh"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do
