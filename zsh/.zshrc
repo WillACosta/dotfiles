@@ -250,7 +250,7 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init zsh)"
 export ZK_NOTEBOOK_DIR=~/zk-notebook
 
-eval "$(fzf --zsh)
+eval "$(fzf --zsh)"
 
 # Start tmux session - add this to the terminal start process
 # ~/start_dev.sh

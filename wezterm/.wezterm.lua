@@ -1,7 +1,5 @@
 local wezterm = require("wezterm")
-
 local config = wezterm.config_builder()
-local home  = wezterm.home_dir
 
 config.default_cwd = "~"
 
@@ -30,7 +28,7 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.8
 config.macos_window_background_blur = 68
 config.window_padding = {
-  left = 10, 
+  left = 10,
   right = 10,
   top = 10,
   bottom = 5
