@@ -78,6 +78,7 @@ declare -A FILES_TO_SYMLINK=(
   ["$DOTFILES_DIR/eza/theme.yml"]="~/.config/eza/theme.yml"
   ["$DOTFILES_DIR/wezterm/.wezterm.lua"]="~/.wezterm.lua"
   ["$DOTFILES_DIR/p10k/.p10k.zsh"]="~/.p10k.zsh"
+  ["$DOTFILES_DIR/codex/config.toml"]="~/.codex/config.toml"
 )
 
 for SRC in "${!FILES_TO_SYMLINK[@]}"; do
