@@ -133,16 +133,16 @@ alt-n= 'resize smart -80'
 alt-m= 'resize smart +80'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-q = 'workspace Browser'
-alt-w = 'workspace Dev'
-alt-e = 'workspace Prod'
-alt-r = 'workspace Creator'
-alt-t = 'workspace KiCad'
-alt-y = 'workspace 6'
-alt-u = 'workspace 7'
-alt-i = 'workspace Spotify'
-alt-o = 'workspace 9'
-alt-p = 'workspace A'
+alt-q = 'workspace brow'
+alt-w = 'workspace dev'
+alt-e = 'workspace pro'
+alt-r = 'workspace crea'
+alt-t = 'workspace proj'
+alt-y = 'workspace y'
+alt-u = 'workspace u'
+alt-i = 'workspace i'
+alt-o = 'workspace o'
+alt-p = 'workspace p'
 # alt-b = 'workspace B'
 # alt-c = 'workspace C'
 # alt-d = 'workspace D'
@@ -166,16 +166,16 @@ alt-p = 'workspace A'
 # alt-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-q = 'move-node-to-workspace Browser'
-alt-shift-w = 'move-node-to-workspace Dev'
-alt-shift-e = 'move-node-to-workspace Prod'
-alt-shift-r = 'move-node-to-workspace Creator'
-alt-shift-t = 'move-node-to-workspace KiCad'
-alt-shift-y = 'move-node-to-workspace 6'
-alt-shift-u = 'move-node-to-workspace 7'
-alt-shift-i = 'move-node-to-workspace Spotify'
-alt-shift-o = 'move-node-to-workspace 9'
-alt-shift-p = 'move-node-to-workspace A'
+alt-shift-q = 'move-node-to-workspace brow'
+alt-shift-w = 'move-node-to-workspace dev'
+alt-shift-e = 'move-node-to-workspace pro'
+alt-shift-r = 'move-node-to-workspace crea'
+alt-shift-t = 'move-node-to-workspace proj'
+alt-shift-y = 'move-node-to-workspace y'
+alt-shift-u = 'move-node-to-workspace u'
+alt-shift-i = 'move-node-to-workspace i'
+alt-shift-o = 'move-node-to-workspace o'
+alt-shift-p = 'move-node-to-workspace p'
 # alt-shift-b = 'move-node-to-workspace B'
 # alt-shift-c = 'move-node-to-workspace C'
 # alt-shift-d = 'move-node-to-workspace D'
@@ -278,71 +278,75 @@ run = 'layout floating'
 ## Browsers Workspace
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-run = 'move-node-to-workspace Browser'
+run = 'move-node-to-workspace brow'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace Browser'
+run = 'move-node-to-workspace brow'
 
 ## Development Workspace
 [[on-window-detected]]
 if.app-id = 'dev.warp.Warp-Stable'
-run = 'move-node-to-workspace Dev'
+run = 'move-node-to-workspace dev'
 
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace Dev'
+run = 'move-node-to-workspace dev'
 
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
-run = 'move-node-to-workspace Dev'
+run = 'move-node-to-workspace dev'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace Dev'
+run = 'move-node-to-workspace dev'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace Dev'
+run = 'move-node-to-workspace dev'
 
 ## Productivity Workspace
 [[on-window-detected]]
 if.app-id = 'notion.id'
-run = 'move-node-to-workspace Prod'
+run = 'move-node-to-workspace pro'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace Prod'
+run = 'move-node-to-workspace pro'
 
 ## Creator Workspace
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
-run = 'move-node-to-workspace Creator'
+run = 'move-node-to-workspace crea'
 
 [[on-window-detected]]
 if.app-id = 'emmo.prodrafts'
-run = 'move-node-to-workspace Creator'
+run = 'move-node-to-workspace crea'
 
 [[on-window-detected]]
 if.app-id = 'com.goodnotesapp.x'
-run = 'move-node-to-workspace Creator'
+run = 'move-node-to-workspace crea'
 
 [[on-window-detected]]
-if.app-id = 'org.kicad.kicad'
-run = 'move-node-to-workspace KiCad'
+if.app-id = 'com.apple.freeform'
+run = 'move-node-to-workspace crea'
+
+# [[on-window-detected]]
+# if.app-id = 'org.kicad.kicad'
+# run = 'move-node-to-workspace proj'
 
 [[on-window-detected]]
 if.app-id = 'com.shapr3d.shapr'
-run = 'move-node-to-workspace Creator'
+run = 'move-node-to-workspace crea'
 
 [[on-window-detected]]
 if.app-id = 'com.lemon.lvoverseas'
-run = 'move-node-to-workspace Creator'
+run = 'move-node-to-workspace crea'
 
 ## Spotify -> Second monitor 8 and 9
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace Spotify'
+run = 'move-node-to-workspace i'
 
 ## Custom Window Sizes
 
@@ -355,16 +359,16 @@ run = 'move-node-to-workspace Spotify'
 [workspace-to-monitor-force-assignment]
 # main or secondary or
 # Built-in Retina Display or ARZOPA or Sidecar Display (AirPlay) or EM160TP-A
-Browser = 'AW3225QF'
-Dev = 'AW3225QF'
-Prod = 'AW3225QF'
-Creator = 'AW3225QF'
-KiCad = 'AW3225QF'
-6 = 'EM160TP-A'
-7 = 'EM160TP-A'
-Spotify = 'EM160TP-A'
-9 = 'EM160TP-A'
-A = 'EM160TP-A'
+brow = 'AW3225QF'
+dev = 'AW3225QF'
+pro = 'AW3225QF'
+crea = 'AW3225QF'
+proj = 'AW3225QF'
+y = 'EM160TP-A'
+u = 'EM160TP-A'
+i = 'EM160TP-A'
+o = 'EM160TP-A'
+p = 'EM160TP-A'
 # Z = 'Built-in Retina Display'
 # M = 'Built-in Retina Display'
 
