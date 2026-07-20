@@ -183,6 +183,7 @@ alias gps="git push"
 alias gc="git checkout"
 alias gb='git branch'
 alias gsts='git stash'
+alias gac='git commit -am'
 
 alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
 alias gd="git diff"
@@ -213,6 +214,8 @@ alias pyrun='poetry run python main.py'
 
 alias lproc='sudo lsof -i'
 alias kproc='kill'
+
+alias senv="set -a && source .env && set +a"
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
@@ -268,3 +271,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/will/.local/bin:$PATH"

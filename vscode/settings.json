@@ -1,10 +1,10 @@
 {
   "window.commandCenter": true,
-  "window.zoomLevel": 1.2,
+  "window.zoomLevel": 1,
 
   "debug.toolBarLocation": "commandCenter",
 
-  "workbench.iconTheme": "catppuccin-perfect-dark",
+  "workbench.iconTheme": "rose-pine-symbols",
   "workbench.colorTheme": "Rosé Pine",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
@@ -12,53 +12,78 @@
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
   "editor.renderWhitespace": "selection",
+
   "editor.cursorBlinking": "smooth",
+  "workbench.list.smoothScrolling": true,
   "editor.smoothScrolling": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "terminal.integrated.minimumContrastRatio": 1,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.fontWeight": "376",
-  "editor.fontFamily": "JetBrains Mono", // JetBrainsMono IBM Plex Mono
+
+  "editor.fontFamily": "JetBrains Mono",
   "editor.fontSize": 13,
-  "editor.lineHeight": 1.5,
+  "editor.lineHeight": 1.6,
   "workbench.editor.empty.hint": "hidden",
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
-  "editor.cursorStyle": "block",
-  "editor.minimap.enabled": false,
+
+  "editor.minimap.enabled": true,
+  "editor.minimap.autohide": "scroll",
+  "editor.minimap.scale": 1,
+  "editor.minimap.showSlider": "always",
+
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 100,
   "editor.rulers": [100, 120],
   "editor.linkedEditing": true,
   "editor.autoClosingBrackets": "always",
-  "editor.detectIndentation": false,
   // "files.autoSave": "afterDelay",
   // "files.autoSaveDelay": 3000,
-  "editor.autoClosingQuotes": "always",
-  "editor.tokenColorCustomizations": {
-    "[*Light*]": {
-      "textMateRules": [
-        {
-          "scope": "ref.matchtext",
-          "settings": {
-            "foreground": "#000"
-          }
-        }
-      ]
-    },
-    "[*Dark*]": {
-      "textMateRules": [
-        {
-          "scope": "ref.matchtext",
-          "settings": {
-            "foreground": "#fff"
-          }
-        }
-      ]
-    },
-    "textMateRules": []
-  },
+  // "editor.autoClosingQuotes": "always",
 
-  "explorer.compactFolders": false,
+  // "workbench.colorCustomizations": {
+    // "[Catppuccin Dark Pro]": {
+      // "editor.background": "#10101c",           // Darker background #1a1a2e
+      // "activityBar.background": "#16213e",      // Custom activity bar
+      // "statusBar.background": "#1e1e2e",        // Match editor background
+      // "titleBar.activeBackground": "#181825"    // Subtle title bar
+    // }
+  // },
+
+  // "editor.tokenColorCustomizations": {
+  //   "[*Light*]": {
+  //     "textMateRules": [
+  //       {
+  //         "scope": "ref.matchtext",
+  //         "settings": {
+  //           "foreground": "#000"
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   "[*Dark*]": {
+  //     "textMateRules": [
+  //       {
+  //         "scope": "ref.matchtext",
+  //         "settings": {
+  //           "foreground": "#fff"
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   "textMateRules": [
+  //     {
+  //       "scope": "keyword.other.dotenv",
+  //       "settings": {
+  //         "foreground": "#FF000000"
+  //       }
+  //     }
+  //   ]
+  // },
+
+  "explorer.compactFolders": true,
   "explorer.confirmDelete": false,
   "explorer.confirmPasteNative": false,
   "explorer.sortOrder": "foldersNestsFiles",
@@ -227,32 +252,61 @@
     "calt",
     "clig",
     "Convolutional",
+    "Dormin",
     "frontmatter",
+    "Gateron",
     "gemini",
     "harfbuzz",
     "httpx",
+    "IFMG",
     "Immich",
+    "JLCCNC",
     "keycaps",
     "keymap",
     "Keymapping",
     "keymaps",
     "Khold",
+    "kicad",
     "linux",
     "Meslo",
+    "nosql",
     "nuphy",
+    "OLED",
     "Opti",
     "overengineering",
     "Silakka",
     "Streamlit",
     "venv",
     "wezterm",
+    "willacosta",
     "WORKDIR",
     "wrksp",
     "zimaos"
   ],
   "window.confirmSaveUntitledWorkspace": false,
-  "dotenv.enableAutocloaking": false,
+  "dotenv.enableAutocloaking": true,
   "docker.extension.enableComposeLanguageServer": false,
   "chat.viewSessions.orientation": "stacked",
-  "editor.occurrencesHighlight": "multiFile"
+  "editor.occurrencesHighlight": "multiFile",
+  "geminicodeassist.displayInlineContextHint": false,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
+  "nrf-connect.enableTelemetry": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  }
 }

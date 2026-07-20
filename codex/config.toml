@@ -3,6 +3,30 @@ model_reasoning_effort = "medium"
 [projects."/Users/will/workspace/projects/portfolio"]
 trust_level = "trusted"
 
+[projects."/Users/will"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/wireless-corne_zmk_config"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/zmk-wireless-corne"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/zmk_bs_corne_firmware"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/zmk_prospector_firmware"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/prospector-zmk-module"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/zmk_eyelash_corne_firmware"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "used-tokens", "weekly-limit"]
 status_line_use_colors = true
@@ -12,6 +36,16 @@ vim_mode_initial_state = "insert"
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
+[tui.keymap.editor]
+insert_newline = ["shift-enter", "ctrl-m"]
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.5"
 
+[features]
+terminal_resize_reflow = true
+memories = true
+
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PAT_TOKEN"
