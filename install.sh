@@ -22,33 +22,42 @@ fi
 
 echo "📦 Bootstrapping dotfiles from: $DOTFILES_DIR"
 
+# --- RHEL/CentOS Specific: Enable EPEL if using dnf ---
+if command -v dnf >/dev/null 2>&1; then
+    if ! dnf list installed epel-release >/dev/null 2>&1; then
+        echo "Configure: Enabling EPEL repository..."
+        sudo dnf install -y epel-release || echo "⚠️ Could not install epel-release. Some tools might fail to install."
+    fi
+fi
+
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k codex)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k codex unzip zip vim-enhanced)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
   if ! command -v "$TOOL" >/dev/null 2>&1; then
     echo "⚠️  $TOOL is not installed."
 
-    # Try to install via Homebrew on macOS
+    # 1. macOS (Homebrew)
     if [[ "$OSTYPE" == "darwin"* ]]; then
       if command -v brew >/dev/null 2>&1; then
         echo "📦 Installing $TOOL with Homebrew..."
         brew install "$TOOL"
-      else
-        echo "❌ Homebrew not found. Please install $TOOL manually."
       fi
+    # 2. Linux
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-      # Install using apt-get on Ubuntu/Debian
-      if command -v apt-get >/dev/null 2>&1; then
+      # RHEL/Fedora (dnf)
+      if command -v dnf >/dev/null 2>&1; then
+        echo "📦 Installing $TOOL with dnf..."
+        sudo dnf install -y "$TOOL"
+      # Ubuntu/Debian (apt)
+      elif command -v apt-get >/dev/null 2>&1; then
         echo "📦 Installing $TOOL with apt-get..."
         sudo apt-get update -y
         sudo apt-get install -y "$TOOL"
       else
-        echo "❌ apt-get not found. Please install $TOOL manually."
+        echo "❌ No supported package manager found."
       fi
-    else
-      echo "❌ Auto-install not supported on this OS. Please install $TOOL manually."
     fi
   else
     echo "✅ $TOOL is installed."
@@ -106,18 +115,25 @@ echo "✅ Dotfiles installed with success!"
 chmod +x ~/start_dev.sh
 chmod +x /usr/local/bin/sd
 
-## Install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install Oh My Zsh (if not already installed)
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
 
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ZSH_CUSTOM="$HOME/$OMZ_DIR/custom"
 
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# Helper for git clones to avoid "already exists" errors
+safe_clone() {
+    if [ ! -d "$2" ]; then
+        git clone "$1" "$2" --depth=1
+    else
+        echo "✅ $(basename "$2") already exists, skipping clone."
+    fi
+}
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ohmyzsh-full-autoupdate
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+safe_clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+safe_clone "https://github.com/Pilaton/OhMyZsh-full-autoupdate.git" "$ZSH_CUSTOM/plugins/ohmyzsh-full-autoupdate"
+safe_clone "https://github.com/zsh-users/zsh-autosuggestions" "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 
 ## ZSH installation end
 
@@ -125,5 +141,33 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git config --global core.editor "vim"
 git config --global core.pager bat
 
-source ~/.zshrc
+# Define where NVM should live
+export NVM_DIR="$HOME/.nvm"
 
+# Check if NVM is already installed
+if [ ! -d "$NVM_DIR" ]; then
+    echo "📦 Downloading and installing NVM..."
+    # -k is used here to bypass corporate SSL issues we encountered
+    curl -fsSLk https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+    # IMPORTANT: Load NVM into the current shell session so the script can use it
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    echo "✅ NVM installed. Installing Node.js LTS..."
+    nvm install --lts
+    nvm use --lts
+else
+    echo "✅ NVM already exists. Loading it..."
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+fi
+
+# Verify Node installation
+if command -v node >/dev/null 2>&1; then
+    echo "🟢 Node.js $(node -v) is ready to go!"
+fi
+
+# Choose ZSH as default shell
+chsh -s $(which zsh)
+
+echo "\n\n🎉✅ You're all set!"
+source ~/.zshrc
