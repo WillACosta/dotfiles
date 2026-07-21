@@ -10,6 +10,9 @@ set -e  # Exit on error
 set -u  # Error on undefined variables
 set -o pipefail
 
+# Ensure ~/.local/bin is in PATH for this session
+export PATH="$HOME/.local/bin:$PATH"
+
 # Detect dotfiles root directory (works in Bash and Zsh)
 if [[ -n "${BASH_SOURCE:-}" ]]; then
   DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -31,12 +34,30 @@ if command -v dnf >/dev/null 2>&1; then
 fi
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k codex unzip zip vim-enhanced)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k codex unzip zip vim-enhanced agy)
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
   if ! command -v "$TOOL" >/dev/null 2>&1; then
     echo "⚠️  $TOOL is not installed."
+
+    # Custom installation for tools not standard in package managers
+    if [[ "$TOOL" == "agy" ]]; then
+      echo "📦 Installing agy (antigravity cli)..."
+      curl -fsSL https://antigravity.google/cli/install.sh | bash
+      continue
+    elif [[ "$TOOL" == "codex" ]]; then
+      if [[ "$OSTYPE" == "darwin"* ]] && command -v brew >/dev/null 2>&1; then
+        echo "📦 Installing codex with Homebrew..."
+        if brew install --cask codex; then
+          continue
+        fi
+        echo "⚠️ Homebrew installation of codex failed. Trying official script..."
+      fi
+      echo "📦 Installing codex cli..."
+      CODEX_NON_INTERACTIVE=true curl -fsSL https://chatgpt.com/codex/install.sh | sh
+      continue
+    fi
 
     # 1. macOS (Homebrew)
     if [[ "$OSTYPE" == "darwin"* ]]; then

@@ -24,7 +24,7 @@ git clone https://github.com/WillACosta/dotfiles.git
 2. Give permissions to the scripts.
 
 ```shell
-chmod +x bootstrap.sh
+chmod +x install.sh
 chmod +x path/to/repo/tmux/start_dev.sh
 ```
 
@@ -55,6 +55,17 @@ bash
 | `grc/`       | Configuration for [Generic Colouriser](https://github.com/garabik/grc/tree/master)                                  |
 | `iterm2/`    | Configuration for [iTerm2](https://iterm2.com/)                                                                     |
 | `nvimm/`     | Configuration for [Neovim](https://neovim.io/) — using [LazyVim](https://www.lazyvim.org/)                          |
+| `codex/`     | Configuration for the [Codex](https://github.com/openai/codex) terminal coding agent.                             |
+| `vim/`       | Configuration for the [Vim](https://www.vim.org/) editor (`.vimrc`).                                                |
+| `gemini/`    | Configuration settings for the [Gemini](https://geminicli.com/docs/cli) CLI and IDE integration.                    |
+| `skhd/`      | Shortcut mappings for the macOS hotkey daemon [skhd](https://github.com/koekeishiya/skhd).                          |
+| `eza/`       | Custom theme definition for [eza](https://github.com/eza-community/eza).                                            |
+| `wezterm/`   | Configuration for the [WezTerm](https://wezfurlong.org/wezterm/) terminal emulator.                                  |
+| `p10k/`      | Prompt configuration for the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) Zsh theme.                     |
+| `kanata/`    | Advanced keyboard remapping config for [Kanata](https://github.com/jtroo/kanata).                                   |
+| `obsidian/`  | Automation scripts and helpers for [Obsidian](https://obsidian.md/) vault management.                              |
+| `ddc/`       | DDC/CI monitor source switching scripts (Mac, PS5, Windows).                                                        |
+| `bash/`      | Configuration files for the [Bash](https://www.gnu.org/software/bash/) shell (`.bashrc`).                            |
 
 ## CLI Commands
 
@@ -65,6 +76,9 @@ bash
 | [`zk`](https://zk-org.github.io/zk/tips/getting-started.html) | Note-taking CLI management.                                   | [x]                           |
 | [`zoxide`](https://github.com/ajeetdsouza/zoxide)             | A `cd` command replacement.                                   | []                            |
 | [`sd`](https://github.com/waydabber/m1ddc)                    | A lightweight CLI to control monitors using DDC/CI protocol   | It has a shortcut in `.zshrc` |
+| [`agy`](https://antigravity.google/docs/cli/reference)        | Terminal-based interface for Google Antigravity.              | []                            |
+| [`codex`](https://github.com/openai/codex)                    | OpenAI's coding agent that runs in your terminal.             | [x]                           |
+| [`eza`](https://github.com/eza-community/eza)                 | A modern, feature-rich replacement for `ls`.                  | [x]                           |
 
 ## Keyboards Profile
 
