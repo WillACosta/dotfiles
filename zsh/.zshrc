@@ -34,7 +34,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-## pnpm path
+## Pnpm path
 export PNPM_HOME="/Users/will/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
@@ -47,11 +47,11 @@ export PATH="$PATH":"/Users/will/fvm/default/bin"
 # export PATH="$PATH":"/Users/will/fvm/versions/3.19.3/bin"
 # export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-## ruby
+## Ruby
 export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/2.7/bin:$PATH
 export PATH=/opt/homebrew/lib/ruby/gems/3.0.0/bin/pod:$PATH
 
-## ffmpeg
+## FFMPEG
 export PATH=~/audio-orchestrator-ffmpeg/bin:$PATH
 
 ## EZA
@@ -68,7 +68,8 @@ export NVM_DIR="$HOME/.nvm"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# spaceship
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -189,7 +190,7 @@ alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)
 alias gd="git diff"
 alias gcall='git checkout -- .'
 alias gr='git remote'
-alias gre='git reset'
+alias grs ='git reset'
 
 # docker
 alias dcb="docker compose up --build -d"

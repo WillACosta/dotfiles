@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Relaunch script with bash if not already using it
-if [ -z "$BASH_VERSION" ]; then
+if [ -z "${BASH_VERSION:-}" ]; then
   echo "⚠️ This script must be run with Bash. Relaunching with bash..."
   exec bash "$0" "$@"
 fi
@@ -34,11 +34,32 @@ if command -v dnf >/dev/null 2>&1; then
 fi
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza wezterm powerlevel10k codex unzip zip vim-enhanced agy)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font)
+
+is_installed() {
+  local tool="$1"
+  case "$tool" in
+    neovim)
+      command -v nvim >/dev/null 2>&1
+      ;;
+    powerlevel10k)
+      brew list powerlevel10k >/dev/null 2>&1 || [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]
+      ;;
+    gemini)
+      command -v gemini >/dev/null 2>&1 || brew list gemini >/dev/null 2>&1
+      ;;
+    agy)
+      command -v agy >/dev/null 2>&1 || [ -f "$HOME/.local/bin/agy" ]
+      ;;
+    *)
+      command -v "$tool" >/dev/null 2>&1
+      ;;
+  esac
+}
 
 echo "🔍 Checking required tools..."
 for TOOL in "${REQUIRED_TOOLS[@]}"; do
-  if ! command -v "$TOOL" >/dev/null 2>&1; then
+  if ! is_installed "$TOOL"; then
     echo "⚠️  $TOOL is not installed."
 
     # Custom installation for tools not standard in package managers
@@ -86,62 +107,15 @@ for TOOL in "${REQUIRED_TOOLS[@]}"; do
 done
 
 echo ""
-echo "🔗 Creating symbolic links..."
-
-declare -A FILES_TO_SYMLINK=(
-  ["$DOTFILES_DIR/tmux/.tmux.conf"]="$HOME/.tmux.con"
-  ["$DOTFILES_DIR/tmux/start_dev.sh"]="$HOME/start_dev.sh"
-  ["$DOTFILES_DIR/zsh/.zshrc"]="$HOME/.zshrc"
-  ["$DOTFILES_DIR/aerospace/aerospace.toml"]="$HOME/.config/aerospace/aerospace.toml"
-  ["$DOTFILES_DIR/borders/bordersrc"]="$HOME/.config/borders/bordersrc"
-  ["$DOTFILES_DIR/hyper/.hyper.js"]="$HOME/.hyper.js"
-  ["$DOTFILES_DIR/vscode/settings.json"]="$HOME/Library/Application Support/Code/User/settings.json"
-  ["$DOTFILES_DIR/vscode/keybindings.json"]="$HOME/Library/Application Support/Code/User/keybindings.json"
-  ["$DOTFILES_DIR/vscode/snippets"]="$HOME/Library/Application Support/Code/User/snippets"
-  ["$DOTFILES_DIR/grc/logs.conf"]="$HOME/.grc/logs.conf"
-  ["$DOTFILES_DIR/grc/.grc.zsh"]="/etc/.grc.zsh"
-  ["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
-  ["$DOTFILES_DIR/vim/.vimrc"]="$HOME/.vimrc"
-  ["$DOTFILES_DIR/gemini/settings.json"]="$HOME/.gemini/settings.json"
-  ["$DOTFILES_DIR/skhd/.skhdrc"]="$HOME/.skhdrc"
-  ["$DOTFILES_DIR/skhd/.skhdrc/switch_display.sh"]="/usr/local/bin/sd"
-  ["$DOTFILES_DIR/eza/theme.yml"]="~/.config/eza/theme.yml"
-  ["$DOTFILES_DIR/wezterm/.wezterm.lua"]="~/.wezterm.lua"
-  ["$DOTFILES_DIR/p10k/.p10k.zsh"]="~/.p10k.zsh"
-  ["$DOTFILES_DIR/codex/config.toml"]="~/.codex/config.toml"
-)
-
-for SRC in "${!FILES_TO_SYMLINK[@]}"; do
-  DEST="${FILES_TO_SYMLINK[$SRC]}"
-  DEST_DIR=$(dirname "$DEST")
-
-  if [ ! -d "$DEST_DIR" ]; then
-    echo "📁 Creating directory: $DEST_DIR"
-    mkdir -p "$DEST_DIR"
-  fi
-
-  if [ -L "$DEST" ] || [ -f "$DEST" ]; then
-    echo "🧹 Removing existing file: $DEST"
-    rm -f "$DEST"
-  fi
-
-  echo "🔗 Linking $SRC → $DEST"
-  ln -sf "$SRC" "$DEST"
-done
-
-echo ""
-echo "✅ Dotfiles installed with success!"
-
-# Give permissions to the start_dev script
-chmod +x ~/start_dev.sh
-chmod +x /usr/local/bin/sd
+echo "🐚 Setting up Oh My Zsh..."
 
 # Install Oh My Zsh (if not already installed)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-ZSH_CUSTOM="$HOME/$OMZ_DIR/custom"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+mkdir -p "$ZSH_CUSTOM/plugins"
 
 # Helper for git clones to avoid "already exists" errors
 safe_clone() {
@@ -156,7 +130,59 @@ safe_clone "https://github.com/zsh-users/zsh-syntax-highlighting.git" "$ZSH_CUST
 safe_clone "https://github.com/Pilaton/OhMyZsh-full-autoupdate.git" "$ZSH_CUSTOM/plugins/ohmyzsh-full-autoupdate"
 safe_clone "https://github.com/zsh-users/zsh-autosuggestions" "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 
-## ZSH installation end
+echo ""
+echo "🔗 Creating symbolic links..."
+
+FILES_TO_SYMLINK=(
+  "$DOTFILES_DIR/tmux/.tmux.conf:$HOME/.tmux.conf"
+  "$DOTFILES_DIR/tmux/start_dev.sh:$HOME/start_dev.sh"
+  "$DOTFILES_DIR/zsh/.zshrc:$HOME/.zshrc"
+  "$DOTFILES_DIR/aerospace/aerospace.toml:$HOME/.config/aerospace/aerospace.toml"
+  "$DOTFILES_DIR/borders/bordersrc:$HOME/.config/borders/bordersrc"
+  "$DOTFILES_DIR/hyper/.hyper.js:$HOME/.hyper.js"
+  "$DOTFILES_DIR/vscode/settings.json:$HOME/Library/Application Support/Code/User/settings.json"
+  "$DOTFILES_DIR/vscode/keybindings.json:$HOME/Library/Application Support/Code/User/keybindings.json"
+  "$DOTFILES_DIR/vscode/snippets:$HOME/Library/Application Support/Code/User/snippets"
+  "$DOTFILES_DIR/grc/logs.conf:$HOME/.grc/logs.conf"
+  "$DOTFILES_DIR/grc/.grc.zsh:/etc/.grc.zsh"
+  "$DOTFILES_DIR/nvim:$HOME/.config/nvim"
+  "$DOTFILES_DIR/vim/.vimrc:$HOME/.vimrc"
+  "$DOTFILES_DIR/gemini/settings.json:$HOME/.gemini/settings.json"
+  "$DOTFILES_DIR/skhd/.skhdrc:$HOME/.skhdrc"
+  "$DOTFILES_DIR/skhd/switch_display.sh:/usr/local/bin/sd"
+  "$DOTFILES_DIR/eza/theme.yml:$HOME/.config/eza/theme.yml"
+  "$DOTFILES_DIR/wezterm/.wezterm.lua:$HOME/.wezterm.lua"
+  "$DOTFILES_DIR/p10k/.p10k.zsh:$HOME/.p10k.zsh"
+  "$DOTFILES_DIR/codex/config.toml:$HOME/.codex/config.toml"
+)
+
+for entry in "${FILES_TO_SYMLINK[@]}"; do
+  SRC="${entry%%:*}"
+  DEST="${entry#*:}"
+  DEST_DIR=$(dirname "$DEST")
+
+  if [ ! -d "$DEST_DIR" ]; then
+    echo "📁 Creating directory: $DEST_DIR"
+    mkdir -p "$DEST_DIR" 2>/dev/null || sudo -n mkdir -p "$DEST_DIR" 2>/dev/null || echo "⚠️ Could not create directory $DEST_DIR (permission denied)"
+  fi
+
+  if [ -L "$DEST" ] || [ -f "$DEST" ] || [ -d "$DEST" ]; then
+    echo "🧹 Removing existing file: $DEST"
+    rm -rf "$DEST" 2>/dev/null || sudo -n rm -rf "$DEST" 2>/dev/null || echo "⚠️ Could not remove $DEST (permission denied)"
+  fi
+
+  echo "🔗 Linking $SRC → $DEST"
+  ln -sf "$SRC" "$DEST" 2>/dev/null || sudo -n ln -sf "$SRC" "$DEST" 2>/dev/null || echo "⚠️ Could not link $SRC → $DEST (permission denied)"
+done
+
+echo ""
+echo "✅ Dotfiles installed with success!"
+
+# Give permissions to executable scripts
+chmod +x "$DOTFILES_DIR/tmux/start_dev.sh"
+chmod +x "$DOTFILES_DIR/skhd/switch_display.sh"
+chmod +x "$HOME/start_dev.sh" 2>/dev/null || true
+chmod +x /usr/local/bin/sd 2>/dev/null || sudo -n chmod +x /usr/local/bin/sd 2>/dev/null || true
 
 ## Run default git config preferences
 git config --global core.editor "vim"
@@ -187,8 +213,18 @@ if command -v node >/dev/null 2>&1; then
     echo "🟢 Node.js $(node -v) is ready to go!"
 fi
 
-# Choose ZSH as default shell
-chsh -s $(which zsh)
+# Check default shell
+CURRENT_SHELL="$(dscl . -read "/Users/$USER" UserShell 2>/dev/null | awk '{print $2}' || echo "${SHELL:-}")"
+if [[ "$CURRENT_SHELL" != *"zsh"* ]]; then
+    echo "💡 Default shell is currently $CURRENT_SHELL. To change to ZSH, run: chsh -s \$(which zsh)"
+else
+    echo "✅ Default shell is already ZSH ($CURRENT_SHELL)."
+fi
 
-echo "\n\n🎉✅ You're all set!"
-source ~/.zshrc
+echo ""
+echo "🎉✅ You're all set!"
+if [ -n "${ZSH_VERSION:-}" ]; then
+    source "$HOME/.zshrc"
+else
+    echo "💡 Run 'source ~/.zshrc' in your zsh session or restart your shell to apply changes."
+fi
