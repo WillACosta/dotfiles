@@ -34,7 +34,7 @@ if command -v dnf >/dev/null 2>&1; then
 fi
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font fzf)
 
 is_installed() {
   local tool="$1"

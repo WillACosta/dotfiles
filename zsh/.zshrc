@@ -64,17 +64,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"                                       # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# spaceship
+# Set name of the theme to load e.g. "random" or "spaceship"
 ZSH_THEME=""
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
@@ -102,7 +93,7 @@ ZSH_THEME=""
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -161,12 +152,13 @@ SPACESHIP_PACKAGE_SHOW=false
 # Aliases
 
 # Replace default commands
-alias ls="eza --icons=always"
-alias cd="z"
+alias ls='eza --icons=always'
+alias cd='z'
+alias ll="eza -l --header --no-permissions --no-user --group-directories-first --icons --git --all"
 
 alias c="clear"
-alias la=tree
-alias cat=bat
+alias la='tree'
+alias cat='bat'
 
 alias clogs='grc -c ~/.grc/logs.conf $1 2>&1'
 
@@ -175,6 +167,7 @@ alias alm='aerospace list monitors'
 
 # git
 alias gcm="git commit -m"
+alias gac='git commit -am'
 alias gcam="git commit --amend -m"
 alias ga='git add'
 alias gaa='git add .'
@@ -187,10 +180,10 @@ alias gsts='git stash'
 alias gac='git commit -am'
 
 alias gl="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
-alias gd="git diff"
+alias gd='git diff'
 alias gcall='git checkout -- .'
 alias gr='git remote'
-alias grs ='git reset'
+# alias grs ='git reset'
 
 # docker
 alias dcb="docker compose up --build -d"
@@ -249,12 +242,7 @@ PATH=/opt/homebrew/bin/python3:$PATH
 [[ -s "/etc/.grc.zsh" ]] && source /etc/.grc.zsh
 
 export PATH="$HOME/.local/bin:$PATH"
-
-# Zoxide CLI
-eval "$(zoxide init zsh)"
 export ZK_NOTEBOOK_DIR=~/zk-notebook
-
-eval "$(fzf --zsh)"
 
 # Start tmux session - add this to the terminal start process
 # ~/start_dev.sh
@@ -273,6 +261,6 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
 
-# Added by Antigravity CLI installer
-export PATH="/Users/will/.local/bin:$PATH"
