@@ -39,7 +39,13 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = 'move-mouse window-lazy-center'
+
+# Workaround for "ghost" windows gap (https://github.com/nikitabobko/AeroSpace/issues/1615)
+
+on-focus-changed = [
+  'move-mouse window-lazy-center',
+  'exec-and-forget /opt/homebrew/bin/aerospace list-windows --all',
+]
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -47,7 +53,6 @@ on-focus-changed = 'move-mouse window-lazy-center'
 automatically-unhide-macos-hidden-apps = false
 
 # @Additional Settings ##
-
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -375,13 +380,13 @@ p = 'EM160TP-A'
 # Enter service mode => alt-shift-semicolon
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
+
+# Toggle between floating and tiling layout
+f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -391,6 +396,8 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+b = ['balance-sizes', 'mode main']
 
 down = 'volume down'
 up = 'volume up'

@@ -125,4 +125,3 @@ shift + ctrl + alt - 3 : /usr/local/bin/sd both hdmi2 hdmi1
 
 # Add this to the end of your sd script
 osascript -e "display notification \"Switching to $2...\" with title \"Monitor Control\""
-

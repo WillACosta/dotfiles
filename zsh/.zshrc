@@ -263,4 +263,3 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-
