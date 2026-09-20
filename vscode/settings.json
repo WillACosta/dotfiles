@@ -4,7 +4,7 @@
 
   "debug.toolBarLocation": "commandCenter",
 
-  "workbench.iconTheme": "rose-pine-symbols",
+  "workbench.iconTheme": "catppuccin-perfect-latte",
   "workbench.colorTheme": "Rosé Pine",
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.productIconTheme": "fluent-icons",
@@ -249,6 +249,7 @@
     "agentic",
     "Agentic",
     "agênticas",
+    "archivation",
     "ARGB",
     "calt",
     "clig",
@@ -271,6 +272,7 @@
     "kicad",
     "linux",
     "Meslo",
+    "MOSFET",
     "nosql",
     "nuphy",
     "OLED",
@@ -283,10 +285,11 @@
     "willacosta",
     "WORKDIR",
     "wrksp",
+    "Zettelkasten",
     "zimaos"
   ],
   "window.confirmSaveUntitledWorkspace": false,
-  "dotenv.enableAutocloaking": true,
+  "dotenv.enableAutocloaking": false,
   "docker.extension.enableComposeLanguageServer": false,
   "chat.viewSessions.orientation": "stacked",
   "editor.occurrencesHighlight": "multiFile",
@@ -302,16 +305,7 @@
   "nrf-connect.enableTelemetry": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "keyword.other.dotenv",
-        "settings": {
-          "foreground": "#FF000000"
-        }
-      }
-    ]
+    "textMateRules": []
   },
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4o-mini",
   "tabnine.experimentalAutoImports": true
 }

@@ -34,7 +34,7 @@ if command -v dnf >/dev/null 2>&1; then
 fi
 
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font fzf m1ddc  asmvik/formulae/skhd)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font fzf m1ddc  asmvik/formulae/skh glow)
 
 is_installed() {
   local tool="$1"
@@ -211,6 +211,19 @@ fi
 # Verify Node installation
 if command -v node >/dev/null 2>&1; then
     echo "🟢 Node.js $(node -v) is ready to go!"
+fi
+
+# Create a local secrets file without overwriting existing credentials.
+SECRETS_FILE="$HOME/.secrets"
+SECRETS_TEMPLATE="$DOTFILES_DIR/zsh/.secrets_example"
+
+if [ ! -e "$SECRETS_FILE" ]; then
+    cp "$SECRETS_TEMPLATE" "$SECRETS_FILE"
+    chmod 600 "$SECRETS_FILE"
+    echo "🔐 Created $SECRETS_FILE from the secrets template. Update it with your secrets."
+else
+    chmod 600 "$SECRETS_FILE"
+    echo "🔐 $SECRETS_FILE already exists. Remember to keep it updated with your secrets."
 fi
 
 # Check default shell

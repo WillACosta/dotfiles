@@ -188,7 +188,7 @@ alias gr='git remote'
 # docker
 alias dcb="docker compose up --build -d"
 alias dcu="docker compose up -d"
-alias dl="docker ps -l -q"
+alias dps="docker ps -l -q"
 alias dx="docker exec -it"
 
 alias dsa='docker stop $(docker ps -q)'
@@ -207,8 +207,6 @@ alias pcv='python -m venv .venv'
 alias pyrun='poetry run python main.py'
 
 alias lproc='sudo lsof -i'
-alias kproc='kill'
-
 alias senv="set -a && source .env && set +a"
 
 # Load Angular CLI autocompletion.
@@ -251,15 +249,46 @@ export ZK_NOTEBOOK_DIR=~/zk-notebook
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
-
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# setopt share_history
+# setopt hist_expire_dups_first
+# setopt hist_ignore_dups
+# setopt hist_verify
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Custom kill process fn
+
+killport() {
+    local port=$1
+    if [ -z "$port" ]; then
+      echo "Error: Please specify a port number. Usage: killport <port>"
+      return 1
+    fi
+
+    # Check if anything is running on the port
+    if ! lsof -i :"$port" > /dev/null; then
+      echo "No process found running on port $port."
+      return 0
+    fi
+
+    echo "The following process is using port $port:"
+    lsof -i :"$port"
+    echo ""
+
+    read -q "choice?Are you sure you want to kill this process? (y/n): "
+    echo "" # Move to a new line after input
+
+    if [[ "$choice" =~ ^[Yy]$ ]]; then
+      kill -9 $(lsof -t -i:"$port")
+      echo "Process on port $port killed successfully."
+    else
+      echo "Aborted. Process left untouched."
+    fi
+}
+
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.secrets ]] && source ~/.secrets

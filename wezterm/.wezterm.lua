@@ -24,9 +24,12 @@ config.colors = {
 }
 
 config.enable_tab_bar = false
+
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.75
+config.window_close_confirmation = 'NeverPrompt'
 config.macos_window_background_blur = 60
+
 config.window_padding = {
   left = 20,
   right = 20,

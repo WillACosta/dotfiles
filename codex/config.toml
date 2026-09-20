@@ -1,5 +1,6 @@
-model = "gpt-5.5"
+model = "gpt-5.6-terra"
 model_reasoning_effort = "medium"
+approvals_reviewer = "auto_review"
 [projects."/Users/will/workspace/projects/portfolio"]
 trust_level = "trusted"
 
@@ -27,17 +28,42 @@ trust_level = "trusted"
 [projects."/Users/will/workspace/keyboards/zmk_eyelash_corne_firmware"]
 trust_level = "trusted"
 
+[projects."/Users/will/workspace/keyboards/_frgn"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/dormin"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects/obsidian-seam/docs/specs"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/firmware/zmk_bs_corne_firmware"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/keyboards/wlfkbd"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects/obsidian-seam"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects/.github"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/dotfiles"]
+trust_level = "trusted"
+
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "git-branch", "used-tokens", "weekly-limit"]
 status_line_use_colors = true
 vim_mode_default = true
 vim_mode_initial_state = "insert"
 
-[tui.model_availability_nux]
-"gpt-5.5" = 4
-
 [tui.keymap.editor]
 insert_newline = ["shift-enter", "ctrl-m"]
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+gpt-6-astra = 4
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.5"
@@ -48,4 +74,4 @@ memories = true
 
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
-bearer_token_env_var = "GITHUB_PAT_TOKEN"
+bearer_token_env_var = "GITHUB_PAT"
