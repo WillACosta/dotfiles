@@ -1,6 +1,9 @@
-model = "gpt-5.6-terra"
+model = "gpt-6-luna"
 model_reasoning_effort = "medium"
-approvals_reviewer = "auto_review"
+approvals_reviewer = "user"
+notify = ["/Users/will/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+service_tier = "default"
+
 [projects."/Users/will/workspace/projects/portfolio"]
 trust_level = "trusted"
 
@@ -52,21 +55,39 @@ trust_level = "trusted"
 [projects."/Users/will/workspace/dotfiles"]
 trust_level = "trusted"
 
+[projects."/Users/will/workspace/projects/will-portfolio"]
+trust_level = "trusted"
+
+[projects."/Users/will/Documents/Codex/2026-09-23/hop"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects/seam"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects/seam_app"]
+trust_level = "trusted"
+
+[projects."/Users/will/workspace/projects/seam-workspace/seam_app"]
+trust_level = "trusted"
+
 [tui]
-status_line = ["model-with-reasoning", "current-dir", "git-branch", "used-tokens", "weekly-limit"]
+status_line = ["model-with-reasoning", "current-dir", "git-branch", "five-hour-limit", "used-tokens", "task-progress"]
 status_line_use_colors = true
 vim_mode_default = true
 vim_mode_initial_state = "insert"
+screen_reader_detection_done = true
 
-[tui.keymap.editor]
-insert_newline = ["shift-enter", "ctrl-m"]
+# [tui.keymap.editor]
+# insert_newline = ["ctrl-enter"]
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
-gpt-6-astra = 4
+"gpt-6-astra" = 4
+"gpt-6.1-sol" = 4
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.5"
+"gpt-5.6-luna" = "gpt-6-luna"
 
 [features]
 terminal_resize_reflow = true
@@ -75,3 +96,101 @@ memories = true
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_PAT"
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/will/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/will/.codex"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1007.71326"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/will/.codex/plugins/cache/openai-bundled/browser/26.1007.71326/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_SERVICE_PATH = "/Users/will/.codex/computer-use/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
+
+[desktop]
+followUpQueueMode = "steer"
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = true
+notifications-turn-mode = "always"
+hotkey-window-projectless-default-enabled = true
+show-context-window-usage = true
+appearanceTheme = "dark"
+appearanceDarkCodeThemeId = "rose-pine"
+selected-avatar-id = "null-signal"
+git-commit-instructions = "Always use Conventional Commits pattern (https://www.conventionalcommits.org/en/v1.0.0/#specification) for commit messages."
+git-pr-instructions = "Should include a summary of the changes (short and precise)."
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#a67df2"
+accentSource = "chatgpt"
+contrast = 60
+ink = "#e0def4"
+opaqueWindows = false
+surface = "#232136"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = '"Nunito"'
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#9ccfd8"
+diffRemoved = "#908caa"
+skill = "#c4a7e7"
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "/Users/will/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "/Users/will/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."code-review@openai-bundled"]
+enabled = true
+
+[plugins."expo@openai-curated"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true

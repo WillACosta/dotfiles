@@ -41,6 +41,9 @@ export PATH="$PNPM_HOME:$PATH"
 ### Node
 export PATH=$PATH:/usr/local/opt/node@14/bin
 
+## Obsidian path
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
 ## Flutter/Dart binary path
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"/Users/will/fvm/default/bin"
