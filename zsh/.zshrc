@@ -252,6 +252,7 @@ export ZK_NOTEBOOK_DIR=~/zk-notebook
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=999
+unsetopt correct
 # setopt share_history
 # setopt hist_expire_dups_first
 # setopt hist_ignore_dups

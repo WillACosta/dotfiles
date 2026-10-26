@@ -3,9 +3,9 @@ local config = wezterm.config_builder()
 
 config.default_cwd = "~"
 
--- Font
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
-config.font_size = 19
+-- Font MesloLGS Nerd Font Mono
+config.font = wezterm.font("JetBrains Mono NL")
+config.font_size = 16
 config.line_height = 1.2
 
 -- UI
@@ -25,16 +25,16 @@ config.colors = {
 
 config.enable_tab_bar = false
 
-config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.75
-config.window_close_confirmation = 'NeverPrompt'
+config.window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW"
+config.window_background_opacity = 0.70
 config.macos_window_background_blur = 60
+config.window_close_confirmation = 'NeverPrompt'
 
 config.window_padding = {
   left = 20,
   right = 20,
-  top = 20,
-  bottom = 20
+  top = 16,
+  bottom = 16
 }
 
 --[[config.colors = {

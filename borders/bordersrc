@@ -1,13 +1,22 @@
 #!/bin/bash
 
+# JankyBorders - Rosé Pine
 # https://github.com/FelixKratz/JankyBorders
+
+# Rosé Pine palette
+ROSE_PINE_IRIS=0xffc4a7e7
+ROSE_PINE_MUTED=0xff6e6a86
+
+# Applications excluded from borders
+BLACKLIST="Raycast,Alfred,Spotlight"
 
 options=(
   style=round
-  width=2.0
-  hidpi=off
-  active_color=0xD1F9D1ED
-  inactive_color=0xff414550
+  width=2
+  hidpi=on
+  active_color=$ROSE_PINE_IRIS
+  inactive_color=$ROSE_PINE_MUTED
+  "blacklist=$BLACKLIST"
 )
 
 borders "${options[@]}"

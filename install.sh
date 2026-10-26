@@ -33,8 +33,11 @@ if command -v dnf >/dev/null 2>&1; then
     fi
 fi
 
+brew tap FelixKratz/formulae
+brew trust felixkratz/formulae
+
 # List of required tools
-REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font fzf m1ddc  asmvik/formulae/skh glow)
+REQUIRED_TOOLS=(tmux zsh git grc neovim bat gemini zk zoxide eza powerlevel10k codex unzip zip agy font-meslo-lg-nerd-font fzf m1ddc  asmvik/formulae/skh glow borders)
 
 is_installed() {
   local tool="$1"
