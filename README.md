@@ -11,7 +11,7 @@ curl -fsSL https://raw.githubusercontent.com/WillACosta/dotfiles/main/install.sh
 wget -qO- https://raw.githubusercontent.com/WillACosta/dotfiles/main/install.sh | bash
 ```
 
-![current iterm profile](./assets/images/iterm.png)
+![current iterm profile](./assets/images/terminal.png)
 
 ## Getting Started
 
