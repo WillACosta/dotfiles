@@ -236,9 +236,9 @@ run = 'layout floating'
 if.app-name-regex-substring = 'seam'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-id = 'com.apple.finder'
-# run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'docker'

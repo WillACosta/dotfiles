@@ -1,4 +1,18 @@
 [
+  // VSCodeVim 1.32.4 calls the removed closeDirtyDiff command on Normal-mode Esc.
+  {
+    "key": "escape",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "closeReferenceSearchEditor",
+        "closeMarkersNavigation",
+        "closeQuickDiff",
+        "editor.action.inlineSuggest.hide"
+      ]
+    },
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !editorHasMultipleSelections && (dirtyDiffVisible || inDiffEditor)"
+  },
   {
     "key": "ctrl+w right",
     "command": "workbench.action.navigateRight"

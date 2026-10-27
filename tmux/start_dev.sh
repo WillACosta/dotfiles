@@ -5,7 +5,7 @@ WORKDIR="$HOME/workspace/projects"
 
 if ! tmux has-session -t "$SESSION" 2>/dev/null; then
 	tmux new-session -d -s "$SESSION" -n "wrksp"
-	tmux split-window -h -p 33 -t "$SESSION:wrksp"
+	tmux split-window -v -p 20 -t "$SESSION:wrksp"
 	tmux send-keys -t "$SESSION:wrksp.1" "cd $WORKDIR && clear" C-m
 	tmux send-keys -t "$SESSION:wrksp.2" "cd $WORKDIR && clear" C-m
 
