@@ -3,16 +3,36 @@
 " Plugins
 " ==========================================
 call plug#begin('~/.vim/plugged')
-
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'airblade/vim-gitgutter'
-
 call plug#end()
+
+" ==========================================
+" Clean UI
+" ==========================================
+
+" Remove the separate sign column
+" set signcolumn=no
+set signcolumn=yes
+
+" Remove unnecessary UI elements
+set noruler
+set noshowcmd
+set laststatus=0
+
+" Remove vertical split borders
+set fillchars+=vert:\
+
+" Make gutter match the editor background
+highlight LineNr guibg=NONE ctermbg=NONE
+highlight SignColumn guibg=NONE ctermbg=NONE
+highlight FoldColumn guibg=NONE ctermbg=NONE
 
 " ==========================================
 " Editor
 " ==========================================
+
 syntax enable
 syntax on
 filetype plugin on
@@ -32,7 +52,7 @@ set guicursor=""
 set so=10
 set ai
 set si
-set wrap
+"set wrap
 set ruler
 
 set wildignore=.*
@@ -67,17 +87,12 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
-" Hide Markdown formatting markers
-set conceallevel=2
-set concealcursor=nc
-
-" Markdown writing experience
 augroup markdown_settings
     autocmd!
+    autocmd FileType markdown setlocal conceallevel=2
+    autocmd FileType markdown setlocal concealcursor=nc
     autocmd FileType markdown setlocal wrap linebreak
-    autocmd FileType markdown setlocal spell spelllang=en_us
 augroup END
-
 
 " colorscheme gruber-darker
 " Mirror vim register to SO's clipboard

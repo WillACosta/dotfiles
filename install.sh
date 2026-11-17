@@ -237,6 +237,10 @@ else
     echo "✅ Default shell is already ZSH ($CURRENT_SHELL)."
 fi
 
+# Create dirs for vim plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo ""
 echo "🎉✅ You're all set!"
 if [ -n "${ZSH_VERSION:-}" ]; then
