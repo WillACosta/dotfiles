@@ -157,7 +157,8 @@ SPACESHIP_PACKAGE_SHOW=false
 # Replace default commands
 alias ls='eza --icons=always'
 alias cd='z'
-alias ll="eza -l --header --no-permissions --no-user --group-directories-first --icons --git --all"
+alias ll="eza -l --header --no-permissions --no-user --group-directories-first --icons --git --all --loc"
+alias lcode="eza --code"
 
 alias c="clear"
 alias la='tree'
@@ -296,3 +297,4 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ -f ~/.secrets ]] && source ~/.secrets
+export PATH=/opt/homebrew/bin:$PATH
